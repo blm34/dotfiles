@@ -13,6 +13,7 @@ To use this Neovim configuration, this repository should be cloned to:
 * [git](https://git-scm.com/downloads)
 * [Ripgrep](https://github.com/BurntSushi/ripgrep?tab=readme-ov-file#installation)
 * [LazyGit](https://github.com/jesseduffield/lazygit)
+* [npm](https://nodejs.org/en/download/)
 
 ### Python ###
 
