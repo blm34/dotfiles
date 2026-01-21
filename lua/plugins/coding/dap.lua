@@ -85,6 +85,7 @@ return {
                 noremap = true,
                 silent = true,
             },
+            { "<leader>dt" },
         },
         config = function()
             local dap = require("dap")

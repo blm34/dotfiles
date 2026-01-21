@@ -18,6 +18,7 @@ return {
         { "<leader>do" },
         { "<leader>di" },
         { "<leader>dO" },
+        { "<leader>dt" },
     },
     config = function()
         require("mason-nvim-dap").setup({
