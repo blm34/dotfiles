@@ -10,15 +10,9 @@ vim.keymap.set("v", "K", ":m '>-2<CR>gv=gv")
 vim.keymap.set("v", ">", ">gv")
 vim.keymap.set("v", "<", "<gv")
 
--- Recenter screen on jumps
-vim.keymap.set("n", "n", function()
-    vim.cmd("normal! n")
-    require("mini.animate").execute_after("scroll", vim.cmd("normal! zzzv"))
-end)
-vim.keymap.set("n", "N", function()
-    vim.cmd("normal! N")
-    require("mini.animate").execute_after("scroll", vim.cmd("normal! zzzv"))
-end)
+-- Recenter screen and open folds when searching
+vim.keymap.set("n", "n", "nzzzv")
+vim.keymap.set("n", "N", "Nzzzv")
 
 -- <leader>p to paste from system clipboard
 vim.keymap.set("n", "<leader>p", "\"+p")
