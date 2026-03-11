@@ -4,12 +4,21 @@ local uv = vim.loop
 
 local is_windows = require("helpers.os").is_windows
 
+local python_path_in_venv
+if is_windows then
+    python_path_in_venv = vim.fs.joinpath("Scripts", "python.exe")
+else
+    python_path_in_venv = vim.fs.joinpath("bin", "python")
+end
+
+-- Check if a file at `path` is executable
 local function is_executable(path)
     if not path or path == "" then return false end
     local stat = uv.fs_stat(path)
     return stat ~= nil
 end
 
+-- Find the venv in the given directory
 local function python_in_dir(dir)
     if not dir or dir == "" then return nil end
 
@@ -20,19 +29,13 @@ local function python_in_dir(dir)
         "env",
     }
 
-    local path_within_venv
-    if is_windows then
-        path_within_venv = vim.fs.joinpath("Scripts", "python.exe")
-    else
-        path_within_venv = vim.fs.joinpath("bin", "python")
-    end
-
     for _, venv_name in ipairs(venv_names) do
-        local path = vim.fs.joinpath(dir, venv_name, path_within_venv)
+        local path = vim.fs.joinpath(dir, venv_name, python_path_in_venv)
         if is_executable(path) then return path end
     end
 end
 
+-- Look for venvs by recursively moving up the filepath
 local function find_venv_upwards(start_dir)
     local cur = vim.fn.fnamemodify(start_dir, ":p")
     local prev = ""
@@ -44,15 +47,11 @@ local function find_venv_upwards(start_dir)
     end
 end
 
+-- Locate the python executable
 local function get_python_executable()
     local venv = os.getenv("VIRTUAL_ENV")
     if venv and venv ~= "" then
-        local path
-        if is_windows then
-            path = vim.fs.joinpath(venv, "Scripts", "python.exe")
-        else
-            path = vim.fs.joinpath(venv, "bin", "python")
-        end
+        local path = vim.fs.joinpath(venv, python_path_in_venv)
         if is_executable(path) then return path end
     end
 
@@ -83,6 +82,7 @@ end
 
 local Terminal = require("toggleterm.terminal").Terminal
 local py_term = nil
+-- Run a command in a terminal dedicated to python
 local function run_in_toggleterm(cmd)
     if not py_term then
         py_term = Terminal:new({
