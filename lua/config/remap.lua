@@ -17,6 +17,8 @@ vim.keymap.set("n", "N", "Nzzzv")
 -- <leader>p to paste from system clipboard
 vim.keymap.set("n", "<leader>p", "\"+p")
 vim.keymap.set("x", "<leader>p", "\"+p")
+vim.keymap.set("n", "<leader>P", "\"+P")
+vim.keymap.set("x", "<leader>P", "\"+P")
 
 -- <leader>y to copy to system clipboard
 vim.keymap.set("n", "<leader>y", "\"+y")
