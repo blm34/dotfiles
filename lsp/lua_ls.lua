@@ -1,4 +1,4 @@
-local handlers = require("lsp.handlers")
+local handlers = require("helpers.lsp_handlers")
 
 return {
     on_attach = handlers.on_attach,

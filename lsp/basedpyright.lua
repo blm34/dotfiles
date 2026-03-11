@@ -1,4 +1,4 @@
-local handlers = require("lsp.handlers")
+local handlers = require("helpers.lsp_handlers")
 
 local uname = vim.loop.os_uname().sysname
 local is_windows = (vim.fn.has("win32") == 1 or vim.fn.has("win64") == 1 or uname == "Windows_NT")
