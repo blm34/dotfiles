@@ -97,8 +97,14 @@ which has debugpy installed into it.
 | Mode | Keymap | Action | Mnemonic |
 |------|--------|--------|----------|
 | n | `gd` | Go to definition | Go definition |
+| n | `gD` | Go to declaration | Go declaration |
+| n | `gr` | Add references to qfl | Go references |
+| n | `gi` | Go to implementation | Go implementation |
+| n | `gt` | Go to type definition | Go type |
+| n | `<leader>qd` | Send diagnostics to qfl | Quick (fix list) Diagnostics |
 | n | `<leader>rn` | Rename variable | Re name |
 | n | `<leader>ca` | Code action | Code action | 
+| n | `<leader>f` | Format the file | Format | 
 | n | `[d` | Go to previous diagnostic |
 | n | `]d` | Go to next diagnostic |
 | n | `<leader>D` | Toggle diagnostics |
