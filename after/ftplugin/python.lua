@@ -1,3 +1,9 @@
+-- Set indent size
+vim.bo.tabstop = 4
+vim.bo.softtabstop = 4
+vim.bo.shiftwidth = 4
+
+-- Set keymaps for running python files
 local runner = require("runners.python")
 
 vim.keymap.set("n", "<leader>RR", runner.run_current_file,
