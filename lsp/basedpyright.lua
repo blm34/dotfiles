@@ -1,7 +1,6 @@
 local handlers = require("helpers.lsp_handlers")
 
-local uname = vim.loop.os_uname().sysname
-local is_windows = (vim.fn.has("win32") == 1 or vim.fn.has("win64") == 1 or uname == "Windows_NT")
+local is_windows = require("helpers.os").is_windows
 
 local function get_python_path(root_dir)
     -- 1. If venv is activated, use it

@@ -2,8 +2,7 @@ local M = {}
 
 local uv = vim.loop
 
-local uname = vim.loop.os_uname().sysname
-local is_windows = (vim.fn.has("win32") == 1 or vim.fn.has("win64") == 1 or uname == "Windows_NT")
+local is_windows = require("helpers.os").is_windows
 
 local function is_executable(path)
     if not path or path == "" then return false end

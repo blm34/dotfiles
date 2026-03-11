@@ -1,6 +1,5 @@
 local function get_python_path()
-    local uname = vim.loop.os_uname().sysname
-    local is_windows = (vim.fn.has("win32") == 1 or vim.fn.has("win64") == 1 or uname == "Windows_NT")
+    local is_windows = require("helpers.os").is_windows
     local mason_path = vim.fn.stdpath("data")
     if is_windows then
         return mason_path .. "\\mason\\packages\\debugpy\\venv\\Scripts\\python.exe"
