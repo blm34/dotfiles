@@ -211,15 +211,6 @@ In the nvim-tree window, the following maps apply
 | n | `gha` | Stage hunks in the following motion | Git hunk add |
 | n | `ghr` | Restore hunks in the following motion | Git hunk restore |
 
-#### Fugitive ####
-
-The following keymaps apply when in a fugitive window
-
-| Mode | Keymap | Action |
-|------|--------|--------|
-| n | `q` | Close the window |
-| n | `g?` | Open help menu |
-
 ### Python ###
 
 The following are keymaps set to only work within a python file.
