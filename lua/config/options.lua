@@ -38,6 +38,10 @@ vim.opt.scrolloff = 8
 -- Set the sign column to always be visible
 vim.opt.signcolumn = "yes"
 
+-- Set how new splits should be opened
+vim.opt.splitright = true
+vim.opt.splitbelow = true
+
 -- Treat the @ symbol as valid in a filename
 vim.opt.isfname:append("@-@")
 
