@@ -53,6 +53,7 @@ which has debugpy installed into it.
 | n | `gc` | Comment the following noun | Give comment |
 | n | `gcc` | Comment the current line | Give current comment |
 | n | `dgc` | Delete the comment block | |
+| n | `<leader>i` | Toggle the word under the cursor (e.g. True -> False) | Invert |
 
 ### Visual ###
 
