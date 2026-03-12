@@ -211,6 +211,10 @@ In the nvim-tree window, the following maps apply
 | n | `<leader>gb` | Toggle git blame | Git Blame |
 | n | `gha` | Stage hunks in the following motion | Git hunk add |
 | n | `ghr` | Restore hunks in the following motion | Git hunk restore |
+| n | `<leader>gd` | Toggle an inline git diff | Git diff |
+| n | `<leader>qg` | Send Git hunk list to qfl | Quick (fix list) git |
+| n | `]h` | Jump to next hunk | |
+| n | `[h` | Jump to previous hunk | |
 
 ### Python ###
 

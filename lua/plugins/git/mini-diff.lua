@@ -2,20 +2,33 @@ return {
     "nvim-mini/mini.diff",
     version = "*",
     event = "VeryLazy",
-    config = function()
-        require("mini.diff").setup({
-            view = {
-                style = "sign",
-                signs = {
-                    add = '┃',
-                    change = '┃',
-                    delete = '▁',
-                },
+    keys = {
+        {
+            "<leader>gd",
+            function() require('mini.diff').toggle_overlay() end,
+            desc = "Toggle Git diff",
+        },
+        {
+            "<leader>qg",
+            function()
+                vim.fn.setqflist(require('mini.diff').export("qf"))
+                vim.cmd("copen")
+            end,
+            desc = "Send hunks list to qfl",
+        }
+    },
+    opts = {
+        view = {
+            style = "sign",
+            signs = {
+                add = '┃',
+                change = '┃',
+                delete = '▁',
             },
-            mappings = {
-                apply = "gha",
-                reset = "ghr",
-            },
-        })
-    end,
+        },
+        mappings = {
+            apply = "gha",
+            reset = "ghr",
+        },
+    }
 }
