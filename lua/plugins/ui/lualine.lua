@@ -18,7 +18,7 @@ end
 
 local branch_cache = {}
 
-local function branch_and_worktree()
+local function git_branch_and_worktree()
     local bufnr = vim.api.nvim_get_current_buf()
 
     if branch_cache[bufnr] then
@@ -82,21 +82,6 @@ vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost" }, {
     end
 })
 
--- Show current active LSP
-local function lsp_client()
-    local bufnr = vim.api.nvim_get_current_buf()
-    local clients = vim.lsp.get_clients({ bufnr = bufnr })
-    if next(clients) == nil then
-        return ""
-    end
-
-    local names = {}
-    for _, client in pairs(clients) do
-        table.insert(names, client.name)
-    end
-    return " " .. table.concat(names, ",") -- gear icon
-end
-
 -- Show current harpoon index and count
 local function harpoon_statusline()
     local harpoon = require("harpoon")
@@ -135,11 +120,12 @@ return {
     config = function()
         require("lualine").setup({
             options = {
-                theme = "kanagawa",
-                section_separators = { left = "", right = "" },
-                component_separators = { left = "·", right = "·" },
+                theme = "tomorrow_night",
+                section_separators = { left = "", right = "" },
+                component_separators = { left = "", right = "" },
                 icons_enabled = true,
                 globalstatus = false,
+                disabled_filetypes = { 'NvimTree' },
             },
             sections = {
                 lualine_a = {
@@ -147,7 +133,10 @@ return {
                 },
                 lualine_b = {
                     {
-                        branch_and_worktree,
+                        git_branch_and_worktree,
+                        cond = function() return vim.bo.buftype ~= "terminal" end
+                    },
+                    {
                         "diff",
                         cond = function() return vim.bo.buftype ~= "terminal" end
                     }
@@ -155,10 +144,8 @@ return {
                 lualine_c = {
                     {
                         "filename",
-                        cond = function() return vim.bo.buftype ~= "terminal" end
-                    },
-                    {
-                        harpoon_statusline,
+                        newfile_status = true,
+                        path = 1,
                         cond = function() return vim.bo.buftype ~= "terminal" end
                     },
                     {
@@ -167,14 +154,28 @@ return {
                     }
                 },
                 lualine_x = {
-                    { "diagnostics", sources = { 'nvim_lsp' } },
-                    lsp_client,
+                    {
+                        "searchcount",
+                        icon = "⌕",
+                    },
+                    {
+                        "diagnostics",
+                        sources = { 'nvim_lsp' },
+                    },
+                    {
+                        harpoon_statusline,
+                        cond = function() return vim.bo.buftype ~= "terminal" end
+                    },
+                    "encoding",
                 },
                 lualine_y = {
-                    "progress"
+                    {
+                        "lsp_status",
+                        separator = ",",
+                    },
                 },
                 lualine_z = {
-                    "location"
+                    "location",
                 },
             },
             inactive_sections = {
@@ -190,11 +191,11 @@ return {
                         cond = function() return vim.bo.buftype == "terminal" end,
                     }
                 },
-                lualine_x = { "location" },
+                lualine_x = {},
                 lualine_y = {},
                 lualine_z = {},
             },
-            extensions = { "fugitive", "quickfix", "nvim-tree" }
+            extensions = { "quickfix", "nvim-tree" }
         })
     end
 }
