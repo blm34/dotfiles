@@ -27,8 +27,8 @@ return {
             },
         },
         mappings = {
-            apply = "gha",
-            reset = "ghr",
+            apply = "<leader>ga",
+            reset = "<leader>gr",
         },
     }
 }
