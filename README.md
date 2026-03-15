@@ -247,8 +247,8 @@ The following are keymaps set to only work within a python file.
 | Mode | Keymap | Action | Mnemonic |
 |------|--------|--------|----------|
 | n | `<leader>tt` | Run the closest test | Test Test |
-| n | `<leader>tf` | Run the all tests in file | Test File |
-| n | `<leader>ta` | Run the all tests in suite | Test All |
+| n | `<leader>tf` | Run all the tests in the file | Test File |
+| n | `<leader>ta` | Run all the tests in the suite | Test All |
 | n | `<leader>tq` | Stop the current test run | Test Quit |
 | n | `<leader>ts` | Open the test summary panel | Test Summary |
 | n | `<leader>to` | Open the closest test's output | Test Output |
