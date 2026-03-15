@@ -53,7 +53,3 @@ vim.keymap.set("t", "<M-h>", "<C-\\><C-n><C-w>h")
 vim.keymap.set("t", "<M-j>", "<C-\\><C-n><C-w>j")
 vim.keymap.set("t", "<M-k>", "<C-\\><C-n><C-w>k")
 vim.keymap.set("t", "<M-l>", "<C-\\><C-n><C-w>l")
-
--- add blank lines in normal mode
-vim.keymap.set("n", "go", "o<ESC>")
-vim.keymap.set("n", "gO", "O<ESC>")

@@ -42,8 +42,6 @@ which has debugpy installed into it.
 | n & x | `<leader>p` | Paste from system clipboard | Paste |
 | n & v | `<leader>y` | Copy to system clipboard | Yank |
 | n & v | `<leader>d` | Delete - don't write to the unnamed register | Delete |
-| n | `go` | Add blank line below cursor |
-| n | `gO` | Add blank line above cursor |
 | n | `<leader>ut` | Toggle the undotree window | Undo tree |
 | n | `cs"'` | Change the surrounding quotes to single quotes | Change surrounding |
 | n | `ds'` | Delete the surrounding quotes | Delete surrounding |
