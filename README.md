@@ -255,3 +255,10 @@ The following are keymaps set to only work within a python file.
 | n | `<leader>tO` | Toggle the output pannel | Test Output |
 | n | `<leader>tf` | Jump to the next failing test | Test Failed |
 
+### Todo Comments ###
+| Mode | Keymap | Action | Mnemonic |
+|------|--------|--------|----------|
+| n | `]t` | Jump to next Todo | |
+| n | `[t` | Jump to previous Todo | |
+| n | `<leader>qt` | Add all Todos to the quick fix list | Quick (fix list) todos |
+| n | `<leader>st` | Search Todos in telescope | Search todos |
