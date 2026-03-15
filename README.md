@@ -105,6 +105,7 @@ which has debugpy installed into it.
 | n | `<leader>rn` | Rename variable | Re name |
 | n | `<leader>ca` | Code action | Code action | 
 | n | `<leader>f` | Format the file | Format | 
+| n | `<leader>fs` | Toggle format on save | Format save |
 | n | `[d` | Go to previous diagnostic |
 | n | `]d` | Go to next diagnostic |
 | n | `<leader>D` | Toggle diagnostics |
