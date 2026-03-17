@@ -13,10 +13,7 @@ return {
     {
         "mfussenegger/nvim-dap",
         lazy = true,
-        dependencies = {
-            "nvim-neotest/nvim-nio",
-            "rcarriga/nvim-dap-ui",
-        },
+        dependencies = { "rcarriga/nvim-dap-ui" },
         keys = {
             {
                 "<leader>dc",
@@ -95,7 +92,6 @@ return {
                 noremap = true,
                 silent = true,
             },
-            { "<leader>dt" },
         },
         config = function()
             local dap = require("dap")
@@ -148,7 +144,10 @@ return {
     -- DAP UI
     {
         "rcarriga/nvim-dap-ui",
-        dependencies = { "mfussenegger/nvim-dap" },
+        dependencies = {
+            "mfussenegger/nvim-dap",
+            "nvim-neotest/nvim-nio",
+        },
         lazy = true,
         config = function()
             local dapui = require("dapui")
