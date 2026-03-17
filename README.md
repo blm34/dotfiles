@@ -104,8 +104,8 @@ which has debugpy installed into it.
 | n | `<leader>qd` | Send diagnostics to qfl | Quick (fix list) Diagnostics |
 | n | `<leader>rn` | Rename variable | Re name |
 | n | `<leader>ca` | Code action | Code action | 
-| n | `<leader>f` | Format the file | Format | 
-| n | `<leader>fs` | Toggle format on save | Format save |
+| n | `<leader>cf` | Format the file | Code format | 
+| n | `<leader>caf` | Toggle format on save | Code auto format |
 | n | `[d` | Go to previous diagnostic |
 | n | `]d` | Go to next diagnostic |
 | n | `<leader>D` | Toggle diagnostics |

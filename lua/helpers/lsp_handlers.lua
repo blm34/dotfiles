@@ -34,10 +34,10 @@ function M.on_attach(client, bufnr)
     vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts)
 
     -- Formatting
-    vim.keymap.set("n", "<leader>f", function() vim.lsp.buf.format({ async = true }) end, opts)
+    vim.keymap.set("n", "<leader>cf", function() vim.lsp.buf.format({ async = true }) end, opts)
 
     -- Toggle autoformat on save
-    vim.keymap.set("n", "<leader>fs", function()
+    vim.keymap.set("n", "<leader>caf", function()
             vim.g.autoformat_enabled = not vim.g.autoformat_enabled
             local state = vim.g.autoformat_enabled and "enabled" or "disabled"
             vim.notify("Autoformat on save: " .. state, vim.log.levels.INFO)
