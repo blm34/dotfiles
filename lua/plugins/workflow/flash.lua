@@ -11,7 +11,7 @@ return {
             "<leader>/",
             function() require("flash").jump() end,
             mode = { "n", "x", "o" },
-            desc = "Flash",
+            desc = "Search with flash",
         },
     }
 }

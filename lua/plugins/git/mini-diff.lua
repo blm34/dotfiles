@@ -14,7 +14,7 @@ return {
                 vim.fn.setqflist(require('mini.diff').export("qf"))
                 vim.cmd("copen")
             end,
-            desc = "Send hunks list to qfl",
+            desc = "Send git hunks list to qfl",
         }
     },
     opts = {

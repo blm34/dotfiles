@@ -21,66 +21,77 @@ return {
             {
                 "<leader>dc",
                 function() require("dap").continue() end,
+                desc = "Debug continue",
                 noremap = true,
                 silent = true,
             },
             {
                 "<leader>db",
                 function() require("dap").toggle_breakpoint() end,
+                desc = "Toggle breakpoint",
                 noremap = true,
                 silent = true,
             },
             {
                 "<leader>dB",
                 function() require("dap").set_breakpoint(vim.fn.input("Condition: ")) end,
+                desc = "Set conditional breakpoint",
                 noremap = true,
                 silent = true,
             },
             {
                 "<leader>dL",
                 function() require("dap").set_breakpoint(nil, nil, vim.fn.input("Log: ")) end,
+                desc = "Set logpoint",
                 noremap = true,
                 silent = true,
             },
             {
                 "<leader>dq",
                 function() require("dap").terminate() end,
+                desc = "Quit debug session",
                 noremap = true,
                 silent = true,
             },
             {
                 "<leader>dk",
                 function() require("dap.ui.widgets").hover() end,
+                desc = "Show hover",
                 noremap = true,
                 silent = true,
             },
             {
                 "<leader>dr",
                 function() require("dap").repl_open() end,
+                desc = "Open repl",
                 noremap = true,
                 silent = true,
             },
             {
                 "<leader>dl",
                 function() require("dap").run_last() end,
+                desc = "Re-run last session",
                 noremap = true,
                 silent = true,
             },
             {
                 "<leader>do",
                 function() require("dap").step_over() end,
+                desc = "Step over",
                 noremap = true,
                 silent = true,
             },
             {
                 "<leader>di",
                 function() require("dap").step_into() end,
+                desc = "Step into",
                 noremap = true,
                 silent = true,
             },
             {
                 "<leader>dO",
                 function() require("dap").step_out() end,
+                desc = "Step out",
                 noremap = true,
                 silent = true,
             },
@@ -143,7 +154,7 @@ return {
             local dapui = require("dapui")
             dapui.setup({})
 
-            local opts = { noremap = true, silent = true }
+            local opts = { noremap = true, silent = true, desc = "Toggle DAP UI" }
             vim.keymap.set("n", "<leader>du", function() dapui.toggle() end, opts)
         end,
     },

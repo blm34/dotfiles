@@ -96,6 +96,6 @@ return {
             end
         end
 
-        vim.keymap.set("n", "<leader>D", toggle_diagnostics)
+        vim.keymap.set("n", "<leader>D", toggle_diagnostics, { desc = "Toggle diagnostics" })
     end
 }

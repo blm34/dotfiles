@@ -221,14 +221,14 @@ return {
             on_attach = on_attach
         })
 
-        vim.keymap.set("n", "<leader>ff", api.tree.open)
+        vim.keymap.set("n", "<leader>ff", api.tree.open, { desc = "Focus file tree" })
         vim.keymap.set("n", "<leader>ft", function()
             api.tree.toggle({ focus = false })
-        end
+        end, { desc = "Toggle file tree" }
         )
         vim.keymap.set("n", "<leader>fc", function()
             api.tree.open({ find_file = true })
-        end
+        end, { desc = "Open current file in file tree" }
         )
     end
 }

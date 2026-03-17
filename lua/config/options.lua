@@ -24,7 +24,7 @@ vim.opt.hlsearch = true
 -- Highlight matches as a search term is being entered
 vim.opt.incsearch = true
 -- Turn off search match highlights with <ESC> in normal mode
-vim.keymap.set("n", "<ESC>", "<cmd>nohlsearch<CR>", { silent = true, noremap = true })
+vim.keymap.set("n", "<ESC>", "<cmd>nohlsearch<CR>", { silent = true, noremap = true, desc = "Turn off search highlights" })
 -- Case-insensitive searching unless \C or one or more capital letters in the search term
 vim.opt.ignorecase = true
 vim.opt.smartcase = true

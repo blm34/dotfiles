@@ -33,4 +33,4 @@ require("lazy").setup({
     change_detection = { notify = true }
 })
 
-vim.keymap.set('n', '<leader>L', vim.cmd.Lazy)
+vim.keymap.set('n', '<leader>L', vim.cmd.Lazy, { desc = "Open Lazy Plugin Manager" })

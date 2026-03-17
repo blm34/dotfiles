@@ -8,27 +8,27 @@ return {
         {
             '<leader>sf',
             function() require("telescope.builtin").find_files() end,
-            desc = 'Telescope find files',
+            desc = 'Search files in telescope',
         },
         {
             '<leader>sg',
             function() require("telescope.builtin").git_files() end,
-            desc = 'Telescope find git files',
+            desc = 'Search git files in telescope',
         },
         {
             '<leader>sc',
             function() require("telescope.builtin").live_grep() end,
-            desc = 'Telescope live grep',
+            desc = 'Search file contents in telescope',
         },
         {
             '<leader>sb',
             function() require("telescope.builtin").buffers() end,
-            desc = 'Telescope buffers',
+            desc = 'Search buffers in telescope',
         },
         {
             '<leader>sh',
             function() require("telescope.builtin").help_tags() end,
-            desc = 'Telescope help tags',
+            desc = 'Search help tags in telescope',
         },
     },
     config = function()

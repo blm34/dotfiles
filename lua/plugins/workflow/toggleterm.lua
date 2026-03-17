@@ -32,12 +32,12 @@ return {
 
         vim.keymap.set("n", "<Tab>", function()
             vim.cmd("ToggleTermToggleAll")
-        end, { noremap = true, silent = true })
+        end, { desc = "Toggle terminals", noremap = true, silent = true })
 
         for i = 1, 9 do
             vim.keymap.set("n", "<leader>" .. i, function()
                 vim.cmd("ToggleTerm " .. i)
-            end, { noremap = true, silent = true })
+            end, { desc = "Toggle terminal " .. i, noremap = true, silent = true })
         end
     end,
 }
