@@ -6,6 +6,7 @@ return {
         "nvim-lua/plenary.nvim",
         -- "antoinemadec/FixCursorHold.nvim",  -- Repo says possibly needed (recommended)
         "nvim-treesitter/nvim-treesitter",
+        "mfussenegger/nvim-dap",
 
         -- Required Adapters
         "nvim-neotest/neotest-python",
