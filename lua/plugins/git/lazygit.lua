@@ -18,7 +18,7 @@ return {
         "LazyGitConfig",
         "LazyGitCurrentFile",
         "LazyGitFilter",
-        "LAzyGitFilterCurrentFile",
+        "LazyGitFilterCurrentFile",
     },
 
     dependencies = {
