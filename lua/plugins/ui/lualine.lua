@@ -84,6 +84,11 @@ vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost" }, {
 
 -- Show current harpoon index and count
 local function harpoon_statusline()
+    -- Don't trigger loading of harpoon just for the status line
+    if not package.loaded["harpoon"] then
+        return ""
+    end
+
     local harpoon = require("harpoon")
     local list = harpoon:list()
 
