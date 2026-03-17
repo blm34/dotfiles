@@ -146,7 +146,7 @@ which has debugpy installed into it.
 | n | `<leader>ha` | Add the current file to the harpoon list | Harpoon add |
 | n | `<leader>hr` | Remove the current file from the harpoon list | Harpoon remove |
 | n | `<leader>hh` | Open the harpoon list | |
-| n | `<leader>ht` | Open the harpoon window in telescope | Harpoon telescope |
+| n | `<leader>sh` | Open the harpoon window in telescope | Search harpoon |
 | n | `<leader>h1` | Open the nth file in the harpoon list (valid from 1 to 9) | |
 
 #### Telescope ####
