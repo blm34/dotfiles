@@ -82,6 +82,68 @@ vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost" }, {
     end
 })
 
+-- Determine unique file name/path
+local function unique_path()
+    local bufname = vim.api.nvim_buf_get_name(0)
+    if bufname == "" then return "[No Name]" end
+
+    local filename = vim.fn.fnamemodify(bufname, ":t")
+
+    -- Collect all buffers with this filename
+    local duplicates = {}
+    for _, buf in ipairs(vim.api.nvim_list_bufs()) do
+        if vim.api.nvim_buf_is_loaded(buf) then
+            local name = vim.api.nvim_buf_get_name(buf)
+            if name ~= "" and vim.fn.fnamemodify(name, ":t") == filename then
+                table.insert(duplicates, name)
+            end
+        end
+    end
+
+    -- Only one file with this name - just show the filename
+    if #duplicates <= 1 then return filename end
+
+    -- Cross-platform path splitter
+    local sep = package.config:sub(1, 1)
+    local function split_path(p)
+        local parts = {}
+        for part in p:gmatch("[^/\\]+") do
+            table.insert(parts, part)
+        end
+        return parts
+    end
+
+    -- Build the shortest unique path for the current buffer
+    local parts = split_path(bufname)
+    for depth = 2, #parts do
+        local candidate_parts = {}
+        for i = #parts - depth + 1, #parts do
+            table.insert(candidate_parts, parts[i])
+        end
+        local candidate = table.concat(candidate_parts, sep)
+
+        local unique = true
+        for _, other in ipairs(duplicates) do
+            if other ~= bufname then
+                local other_parts = split_path(other)
+                local other_candidate_parts = {}
+                for i = #other_parts - depth + 1, #other_parts do
+                    table.insert(other_candidate_parts, other_parts[i])
+                end
+                local other_candidate = table.concat(other_candidate_parts, sep)
+                if candidate == other_candidate then
+                    unique = false
+                    break
+                end
+            end
+        end
+        if unique then return candidate end
+    end
+
+    -- Fallback: full path
+    return bufname
+end
+
 -- Show current harpoon index and count
 local function harpoon_statusline()
     -- Don't trigger loading of harpoon just for the status line
@@ -148,9 +210,7 @@ return {
                 },
                 lualine_c = {
                     {
-                        "filename",
-                        newfile_status = true,
-                        path = 1,
+                        unique_path,
                         cond = function() return vim.bo.buftype ~= "terminal" end
                     },
                     {
@@ -188,7 +248,7 @@ return {
                 lualine_b = {},
                 lualine_c = {
                     {
-                        "filename",
+                        unique_path,
                         cond = function() return vim.bo.buftype ~= "terminal" end,
                     },
                     {
