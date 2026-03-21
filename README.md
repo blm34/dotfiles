@@ -79,19 +79,28 @@ which has debugpy installed into it.
 
 ### Window Management ###
 
-| Mode | Keymap | Action |
-|------|--------|--------|
-| n & t | `<M-h>` | Move to window to the left |
-| n & t | `<M-l>` | Move to window to the right |
-| n & t | `<M-j>` | Move down one window |
-| n & t | `<M-k>` | Move up one window |
-| n | `<CM-h>` | Decrease window width |
-| n | `<CM-l>` | Increase window width |
-| n | `<CM-j>` | Decrease window height |
-| n | `<CM-k>` | Increase window height |
-| t | `<ESC>` | Exit terminal mode (to normal mode) |
-| n | `<leader>1` | Open terminal 1 (valid for 1-9) |
-| n | `<Tab>` | Toggle all terminals |
+| Mode | Keymap | Action | Mnemonic |
+|------|--------|--------|----------|
+| n & t | `<M-h>` | Move to window to the left | |
+| n & t | `<M-l>` | Move to window to the right | |
+| n & t | `<M-j>` | Move down one window | |
+| n & t | `<M-k>` | Move up one window | |
+| n | `<CM-h>` | Decrease window width | |
+| n | `<CM-l>` | Increase window width | |
+| n | `<CM-j>` | Decrease window height | |
+| n | `<CM-k>` | Increase window height | |
+| t | `<ESC>` | Exit terminal mode (to normal mode) | |
+| n | `<leader>1` | Open terminal 1 (valid for 1-9) | |
+| n | `<Tab>` | Toggle all terminals | |
+| n | `<leader>wn` | Add a new tab | Workspace new |
+| n | `<leader>wc` | Close current tab | Workspace close |
+| n | `<leader>wl` | Move to next tab | |
+| n | `<leader>wh` | Move to previous tab | |
+| n | `<leader>w.` | Move tab to right | |
+| n | `<leader>w,` | Move tab to left | |
+| n | `<leader>wr` | Rename tab | Workspace rename |
+| n | `<leader>wj` | Jump to a tab | Workspace jump |
+| n | `<leader>ww` | Jump to a window | Workspace window |
 
 ### LSP ###
 
