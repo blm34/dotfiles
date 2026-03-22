@@ -72,10 +72,15 @@ which has debugpy installed into it.
 
 | Mode | Keymap | Action |
 |------|--------|--------|
-| n | `<C-j>` | Go to next item in the qfl |
-| n | `<C-k>` | Go to previous item in the qfl |
-| n | `<leader>j` | Got to the next item in the location list |
-| n | `<leader>k` | Got to the previous item in the location list |
+| n | `<leader>qq` | Toggle the qfl |
+| n | `<leader>ql` | Toggle the location list |
+| n | `<leader>j` | Go to next item in the qfl |
+| n | `<leader>k` | Go to previous item in the qfl |
+| n | `<leader>J` | Got to the next item in the location list |
+| n | `<leader>K` | Got to the previous item in the location list |
+| n | `]q` | Got to the next item in the visible list |
+| n | `[q` | Got to the previous item in the visible list |
+| n | `dd` | Delete an item fro the qf/location list |
 
 ### Window Management ###
 

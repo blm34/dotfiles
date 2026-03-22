@@ -21,14 +21,14 @@ vim.keymap.set({ "n", "x" }, "<leader>P", "\"+P", { desc = "Paste above from sys
 -- <leader>y to copy to system clipboard
 vim.keymap.set({ "n", "v" }, "<leader>y", "\"+y", { desc = "Yank to system clipboard" })
 
--- <C-j> to go to next item in qfl
-vim.keymap.set("n", "<C-j>", "<cmd>cnext<CR>zz", { desc = "Go to next item in QFL" })
--- <C-k> to go to previous item in qfl
-vim.keymap.set("n", "<C-k>", "<cmd>cprev<CR>zz", { desc = "Go to previous item in QFL" })
--- <leader>j to go to next item in location list
-vim.keymap.set("n", "<leader>j", "<cmd>lnext<CR>zz", { desc = "Go to next item in location list" })
--- <leader>k to go to previous item in location list
-vim.keymap.set("n", "<leader>k", "<cmd>lprev<CR>zz", { desc = "Go to previous item in location list" })
+-- <leader>j to go to next item in qfl
+vim.keymap.set("n", "<leader>j", "<cmd>cnext<CR>zz", { desc = "Go to next item in QFL" })
+-- <leader>k to go to previous item in qfl
+vim.keymap.set("n", "<leader>k", "<cmd>cprev<CR>zz", { desc = "Go to previous item in QFL" })
+-- <leader>J to go to next item in location list
+vim.keymap.set("n", "<leader>J", "<cmd>lnext<CR>zz", { desc = "Go to next item in location list" })
+-- <leader>K to go to previous item in location list
+vim.keymap.set("n", "<leader>K", "<cmd>lprev<CR>zz", { desc = "Go to previous item in location list" })
 
 -- Move between windows with Alt+direction
 vim.keymap.set("n", "<M-h>", "<C-w>h", { desc = "Move to window to left" })
