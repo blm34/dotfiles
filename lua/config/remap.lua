@@ -29,6 +29,10 @@ vim.keymap.set("n", "<leader>k", "<cmd>cprev<CR>zz", { desc = "Go to previous it
 vim.keymap.set("n", "<leader>J", "<cmd>lnext<CR>zz", { desc = "Go to next item in location list" })
 -- <leader>K to go to previous item in location list
 vim.keymap.set("n", "<leader>K", "<cmd>lprev<CR>zz", { desc = "Go to previous item in location list" })
+--<leader>qcq to clear the qfl
+vim.keymap.set("n", "<leader>qcq", function() vim.fn.setqflist({}, "r") end, { desc = "Clear the qfl" })
+--<leader>qlq to clear the location list
+vim.keymap.set("n", "<leader>qcl", function() vim.fn.setloclist(0, {}, "r") end, { desc = "Clear the location list" })
 
 -- Move between windows with Alt+direction
 vim.keymap.set("n", "<M-h>", "<C-w>h", { desc = "Move to window to left" })

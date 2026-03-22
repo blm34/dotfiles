@@ -81,6 +81,8 @@ which has debugpy installed into it.
 | n | `]q` | Got to the next item in the visible list |
 | n | `[q` | Got to the previous item in the visible list |
 | n | `dd` | Delete an item fro the qf/location list |
+| n | `<leaderqcq` | Clear the qfl |
+| n | `<leaderqcl` | Clear the current location list |
 
 ### Window Management ###
 
