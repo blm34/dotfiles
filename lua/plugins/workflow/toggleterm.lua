@@ -30,10 +30,6 @@ return {
             direction = "horizontal",
         })
 
-        vim.keymap.set("n", "<Tab>", function()
-            vim.cmd("ToggleTermToggleAll")
-        end, { desc = "Toggle terminals", noremap = true, silent = true })
-
         for i = 1, 9 do
             vim.keymap.set("n", "<leader>" .. i, function()
                 vim.cmd("ToggleTerm " .. i)
