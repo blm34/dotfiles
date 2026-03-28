@@ -27,7 +27,7 @@ function M.on_attach(client, bufnr)
 
     -- Editing
     opts.desc = "Rename variable"
-    vim.keymap.set("n", "<leader>rn", function()
+    vim.keymap.set("n", "<leader>cr", function()
         local current_name = vim.fn.expand("<cword>")
         vim.ui.input({
             prompt = "Rename to: ",

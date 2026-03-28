@@ -119,7 +119,7 @@ which has debugpy installed into it.
 | n | `gi` | Go to implementation | Go implementation |
 | n | `gt` | Go to type definition | Go type |
 | n | `<leader>qd` | Send diagnostics to qfl | Quick (fix list) Diagnostics |
-| n | `<leader>rn` | Rename variable | Re name |
+| n | `<leader>cr` | Rename variable | Code Rename |
 | n | `<leader>ca` | Code action | Code action | 
 | n | `<leader>cf` | Format the file | Code format | 
 | n | `<leader>caf` | Toggle format on save | Code auto format |
