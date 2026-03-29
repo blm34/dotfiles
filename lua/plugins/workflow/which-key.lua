@@ -36,6 +36,7 @@ return {
             { "<leader>q", group = "QFL" },
             { "<leader>s", group = "Telescope" },
             { "<leader>t", group = "Test" },
+            { "<leader>r", group = "Code Runners" },
         }
     },
     keys = {
