@@ -1,6 +1,6 @@
 return {
     "nvim-treesitter/nvim-treesitter-context",
-    event = { "BufReadPre", "BufNewFile" },
+    event = "VeryLazy",
     dependencies = {
         "nvim-treesitter/nvim-treesitter"
     },
