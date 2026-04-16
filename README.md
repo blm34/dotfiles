@@ -14,6 +14,7 @@ To use this Neovim configuration, this repository should be cloned to:
 * [Ripgrep](https://github.com/BurntSushi/ripgrep?tab=readme-ov-file#installation)
 * [LazyGit](https://github.com/jesseduffield/lazygit)
 * [npm](https://nodejs.org/en/download/)
+* [tree-sitter-cli](https://github.com/tree-sitter/tree-sitter/blob/master/crates/cli/README.md)
 
 ### Python ###
 

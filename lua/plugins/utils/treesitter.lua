@@ -2,32 +2,39 @@ return {
     'nvim-treesitter/nvim-treesitter',
     event = "VeryLazy",
     build = ":TSUpdate",
-    config = function()
-        local configs = require("nvim-treesitter.configs")
-        configs.setup({
-            highlight = { enable = true },
-            indent = { enable = true },
-            autotage = { enable = true },
-            ensure_installed = {
-                "lua",
-                "python",
-                "bash",
-                "csv",
-                "git_config",
-                "git_rebase",
-                "gitcommit",
-                "gitignore",
-                "html",
-                "json",
-                "markdown",
-                "markdown_inline",
-                "regex",
-                "sql",
-                "toml",
-                "vimdoc",
-                "yaml",
-            },
-            auto_install = true,
+    init = function()
+        vim.api.nvim_create_autocmd('FileType', {
+            callback = function()
+                pcall(vim.treesitter.start)
+                vim.wo[0][0].foldexpr = "v:lua.vim.treesitter.foldexpr()"
+                vim.wo[0][0].foldmethod = "expr"
+                vim.bo.indentexpr = "v:lua.requrie'nvim-treesitter'.indentexpr()"
+            end,
         })
-    end
+
+        local ensure_installed = {
+            "lua",
+            "python",
+            "bash",
+            "csv",
+            "git_config",
+            "git_rebase",
+            "gitcommit",
+            "gitignore",
+            "html",
+            "json",
+            "markdown",
+            "markdown_inline",
+            "regex",
+            "sql",
+            "toml",
+            "vimdoc",
+            "yaml",
+        }
+        local already_installed = require("nvim-treesitter.config").get_installed()
+        local parsers_to_install = vim.iter(ensure_installed):filter(function(parser)
+            return not vim.tbl_contains(already_installed, parser)
+        end):totable()
+        require("nvim-treesitter").install(parsers_to_install)
+    end,
 }
