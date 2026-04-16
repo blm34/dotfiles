@@ -240,6 +240,7 @@ return {
                     },
                 },
                 lualine_z = {
+                    "progress",
                     "location",
                 },
             },
