@@ -1,52 +1,75 @@
-# Neovim Config #
+# Neovim Config
 
-To use this Neovim configuration, this repository should be cloned to:
+Neovim configuration should be located at:
 
 | OS          | Path                 |
 |-------------|----------------------|
 | **Windows** | ~/Appdata/Local/nvim |
 | **Linux**   | ~/.config/nvim       |
 
-## Prerequisites ##
+## Prerequisites
 
-* [Neovim](https://neovim.io)
+* [Neovim](https://neovim.io) (>=0.12)
 * [git](https://git-scm.com/downloads)
 * [Ripgrep](https://github.com/BurntSushi/ripgrep?tab=readme-ov-file#installation)
 * [LazyGit](https://github.com/jesseduffield/lazygit)
 * [npm](https://nodejs.org/en/download/)
 * [tree-sitter-cli](https://github.com/tree-sitter/tree-sitter/blob/master/crates/cli/README.md)
 
-### Python ###
+### Python
 
 To debug python code, a virtual environment must exist at `~/.virtualenvs/debugpy`
 which has debugpy installed into it.
 
-## Keymaps ##
+## Keymaps
 
 `<leader>` is mapped to `<space>`
 
 `<localleader>` is mapped to `\`
 
-### Config ###
+[Whichkey](https://github.com/folke/which-key.nvim) is used to hint keymaps as
+they are typed. Keymaps are sorted into namespaces where appropriate.
+
+### Namespaces
+
+| Namespace | Description |
+|-----------|-------------|
+| `<leader>c` | LSP functionality (Code) |
+| `<leader>d` | Debug |
+| `<leader>g` | Git |
+| `<leader>h` | Harpoon |
+| `<leader>q` | Quickfix list |
+| `<leader>r` | Code Runners |
+| `<leader>s` | Search with telescope |
+| `<leader>t` | Running tests |
+| `<leader>w` | Tab management (workspace) |
+
+### Useful Keymaps
+
+#### Config Management
 
 | Mode | Keymap | Action | Mnemonic |
 |------|--------|--------|----------|
 | n | `<leader>L` | Open Lazy plugin manager | Lazy |
 | n | `<leader>M` | Open Mason manager | Mason |
 
-### Editing ###
+#### UI
+
+| Mode | Keymap | Action | Mnemonic |
+|------|--------|--------|----------|
+| n | `<leader>gg` | Open Lazygit | Git |
+| n | `<leader>o` | Open Oil in a floating window | Oil |
+| n | `<leader>ut` | Toggle the undotree window | Undo tree |
+| n | `<leader>v` | Open vista window for code structure | Vista |
+
+#### Editing
 
 | Mode | Keymap | Action | Mnemonic |
 |------|--------|--------|----------|
 | v | `J` | Move selection down | |
 | v | `K` | Move selection up | |
 | n & x | `<leader>p` | Paste from system clipboard | Paste |
-| n & v | `<leader>y` | Copy to system clipboard | Yank |
-| n & v | `<leader>d` | Delete - don't write to the unnamed register | Delete |
-| n | `<leader>ut` | Toggle the undotree window | Undo tree |
-| n | `cs"'` | Change the surrounding quotes to single quotes | Change surrounding |
-| n | `ds'` | Delete the surrounding quotes | Delete surrounding |
-| n | `ysiw)` | Surround the current word with () | You surround|
+| n & x | `<leader>y` | Copy to system clipboard | Yank |
 | n | `yss}` | Surround the entire line with {} | You surround |
 | v | `Sb` | Surround the selection with the brackets | Surround |
 | n | `gc` | Comment the following noun | Give comment |
@@ -56,36 +79,13 @@ which has debugpy installed into it.
 | n | `<CR>` | Jump to a location using Flash | Search |
 | n | `z=` | Show spelling suggestions with which-key | |
 
-### Visual ###
+#### Visual
 
 | Mode | Keymap | Action |
 |------|--------|--------|
 | n | `<ESC>` | Turn off highlight search |
-| n | `zc` | Close fold under cursor |
-| n | `zC` | Close all folds under cursor |
-| n | `zo` | Open fold under cursor |
-| n | `zO` | Open all folds under cursor |
-| n | `zR` | Open all folds |
-| n | `zM` | Close all folds |
-| n | `zK` | Peak folded lines under cursor |
 
-### Quick Fix List ###
-
-| Mode | Keymap | Action |
-|------|--------|--------|
-| n | `<leader>qq` | Toggle the qfl |
-| n | `<leader>ql` | Toggle the location list |
-| n | `<leader>j` | Go to next item in the qfl |
-| n | `<leader>k` | Go to previous item in the qfl |
-| n | `<leader>J` | Got to the next item in the location list |
-| n | `<leader>K` | Got to the previous item in the location list |
-| n | `]q` | Got to the next item in the visible list |
-| n | `[q` | Got to the previous item in the visible list |
-| n | `dd` | Delete an item fro the qf/location list |
-| n | `<leaderqcq` | Clear the qfl |
-| n | `<leaderqcl` | Clear the current location list |
-
-### Window Management ###
+#### Window Management
 
 | Mode | Keymap | Action | Mnemonic |
 |------|--------|--------|----------|
@@ -98,19 +98,9 @@ which has debugpy installed into it.
 | n | `<CM-j>` | Decrease window height | |
 | n | `<CM-k>` | Increase window height | |
 | t | `<ESC>` | Exit terminal mode (to normal mode) | |
-| n | `<leader>1` | Open terminal 1 (valid for 1-9) | |
-| n | `<Tab>` | Toggle all terminals | |
-| n | `<leader>wn` | Add a new tab | Workspace new |
-| n | `<leader>wc` | Close current tab | Workspace close |
-| n | `<leader>wl` | Move to next tab | |
-| n | `<leader>wh` | Move to previous tab | |
-| n | `<leader>w.` | Move tab to right | |
-| n | `<leader>w,` | Move tab to left | |
-| n | `<leader>wr` | Rename tab | Workspace rename |
-| n | `<leader>wj` | Jump to a tab | Workspace jump |
-| n | `<leader>ww` | Jump to a window | Workspace window |
+| n | `<leader>1` | Toggle terminal 1 (valid for 1-9) | |
 
-### LSP ###
+#### LSP
 
 | Mode | Keymap | Action | Mnemonic |
 |------|--------|--------|----------|
@@ -119,17 +109,13 @@ which has debugpy installed into it.
 | n | `gr` | Add references to qfl | Go references |
 | n | `gi` | Go to implementation | Go implementation |
 | n | `gt` | Go to type definition | Go type |
-| n | `<leader>qd` | Send diagnostics to qfl | Quick (fix list) Diagnostics |
 | n | `<leader>cr` | Rename variable | Code Rename |
 | n | `<leader>ca` | Code action | Code action | 
 | n | `<leader>cf` | Format the file | Code format | 
 | n | `<leader>caf` | Toggle format on save | Code auto format |
-| n | `[d` | Go to previous diagnostic |
-| n | `]d` | Go to next diagnostic |
 | n | `<leader>D` | Toggle diagnostics |
-| n | `<leader>v` | Open vista window for code structure |
 
-#### Completions ####
+#### Completions
 
 | Mode | Keymap | Action | Mnemonic |
 |------|--------|--------|----------|
@@ -140,7 +126,7 @@ which has debugpy installed into it.
 | i | `<C-l>` | Jump to next input of snippet | Left |
 | i | `<C-h>` | Jump to previous input of snippet | Right |
 
-#### Hover ####
+#### Hover
 
 | Mode | Keymap | Action | Mnemonic |
 |------|--------|--------|----------|
@@ -149,23 +135,7 @@ which has debugpy installed into it.
 | n | `<C-p>` | Previous hover | Previous |
 | n | `<C-n>` | Next hover | Next |
 
-### Files ###
-
-| Mode | Keymap | Action | Mnemonic |
-|------|--------|--------|----------|
-| n | `<leader>sf` | Search file names with telescope | Search files |
-| n | `<leader>sc` | Search file contents with telescope | Search contents |
-| n | `<leader>sg` | Search git files with telescope | Search git |
-| n | `<leader>sb` | Search buffers with telescope | Search buffers |
-| n | `<leader>sh` | Search help tags with telescope | Search help |
-| n | `<leader>o` | Open Oil in a floating window | Oil |
-| n | `<leader>ha` | Add the current file to the harpoon list | Harpoon add |
-| n | `<leader>hr` | Remove the current file from the harpoon list | Harpoon remove |
-| n | `<leader>hh` | Open the harpoon list | |
-| n | `<leader>sh` | Open the harpoon window in telescope | Search harpoon |
-| n | `<leader>h1` | Open the nth file in the harpoon list (valid from 1 to 9) | |
-
-#### Telescope ####
+#### Telescope
 
 In a telescope search window the following maps apply
 
@@ -175,106 +145,3 @@ In a telescope search window the following maps apply
 | n | `s` | Open in horizontal split | Split |
 | n | `v` | Open in vertical split | Vertical |
 | n | `t` | Open in new tab | Tab |
-
-#### Nvim Tree ####
-
-In the nvim-tree window, the following maps apply
-
-
-| Mode | Keymap | Action | Mnemonic |
-|------|--------|--------|----------|
-| n | `h` | Collapse directory | Left |
-| n | `H` | Collapse all directories | Big left |
-| n | `L` | Expand all directories | Big right |
-| n | `J` | Jump down to next directory | Big right |
-| n | `K` | Jump up to next directory | Big right |
-| n | `cd` | Make directory under cursor the root directory | Change directory |
-| n | `..` | Make parent of the root directory the new root | `cd ..` |
-| n | `l` | When on a directory, expand it | Right |
-| n | `ll` | When on a file, open in existing window | |
-| n | `lv` | When on a file, open in vertical split | Vertical |
-| n | `lh` | When on a file, open in horizontal split | Horizontal |
-| n | `lt` | When on a file, open in new tab | Tab |
-| n | `lp` | When on a file, open in a preview window | Preview |
-| n | `n` | Create new file or directory | New |
-| n | `c` | Copy file | Copy |
-| n | `d` | Delete file | Delete |
-| n | `r` | Rename file/directory | Rename |
-| n | `x` | Cut file/folder | Ctrl+x |
-| n | `p` | Paste | Paste |
-| n | `y` | Copy filename| Yank |
-| n | `Y` | Copy absolute filepath | Big yank |
-| n | `mm` | Toggle mark on node | Mark |
-| n | `mr` | Remove all marks | Mark remove |
-| n | `md` | Delete marked files | Mark delete |
-| n | `mx` | Cut marked files | Mark Ctrl+x |
-| n | `tm` | Toggle show marked files only | Toggle marked |
-| n | `th` | Toggle show hidden files | Toggle hidden |
-| n | `tgi` | Toggle show git ignored files | Toggle git ignore |
-| n | `tgc` | Toggle show clean git files | Toggle git clean |
-| n | `?` | Open help menu to show keybinds | |
-| n | `i` | Show file info | Info |
-| n | `/` | Filter files based off input text | Search |
-| n | `<ESC>` | Clear filter | |
-| n | `q` | Close nvim-tree window | Quit |
-
-### Git ###
-
-| Mode | Keymap | Action | Mnemonic |
-|------|--------|--------|----------|
-| n | `<leader>gg` | Open LazyGit | |
-| n | `<leader>gb` | Toggle git blame | Git Blame |
-| n | `<leader>ga` | Stage hunks in the following motion | Git hunk add |
-| n | `<leader>gr` | Restore hunks in the following motion | Git hunk restore |
-| n | `<leader>gd` | Toggle an inline git diff | Git diff |
-| n | `<leader>qg` | Send Git hunk list to qfl | Quick (fix list) git |
-| n | `]h` | Jump to next hunk | |
-| n | `[h` | Jump to previous hunk | |
-
-### Python ###
-
-The following are keymaps set to only work within a python file.
-
-| Mode | Keymap | Action | Mnemonic |
-|------|--------|--------|----------|
-| n | `<leader>RR` | Run the current python file | Run |
-| n | `<leader>RF` | Run the python file whose file path is in a chosen register | Run file |
-| n | `<leader>RS` | Save the file path of the current file to a chosen register | Run save |
-
-### Debugging ###
-
-| Mode | Keymap | Action | Mnemonic |
-|------|--------|--------|----------|
-| n | `<leader>dc` | Continue the debugger or start a new debug session | Debug Continue |
-| n | `<leader>db` | Toggle a breakpoint | Debug Breakpoint |
-| n | `<leader>dB` | Set a conditional breakpoint | Debug Breakpoint |
-| n | `<leader>dL` | Set a log point | Debug Logpoint |
-| n | `<leader>dq` | Terminate a debug session | Debug Quit |
-| n | `<leader>dk` | Open the debug hover menu | |
-| n | `<leader>dr` | Open the debug repl | Debug Repl |
-| n | `<leader>dl` | Run the last debug session | Debug Last |
-| n | `<leader>do` | Step over a line in a debug session | Debug Over |
-| n | `<leader>di` | Step into a scope in a debug session | Debug Into |
-| n | `<leader>dO` | Step out of a scope in a debug session | Debug Out |
-| n | `<leader>dt` | Run the closest test in debug mode | Debug Test |
-
-### Tests ###
-
-| Mode | Keymap | Action | Mnemonic |
-|------|--------|--------|----------|
-| n | `<leader>tt` | Run the closest test | Test Test |
-| n | `<leader>tf` | Run all the tests in the file | Test File |
-| n | `<leader>ta` | Run all the tests in the suite | Test All |
-| n | `<leader>tq` | Stop the current test run | Test Quit |
-| n | `<leader>ts` | Open the test summary panel | Test Summary |
-| n | `<leader>to` | Open the closest test's output | Test Output |
-| n | `<leader>tO` | Toggle the output pannel | Test Output |
-| n | `<leader>tf` | Jump to the next failing test | Test Failed |
-
-### Todo Comments ###
-| Mode | Keymap | Action | Mnemonic |
-|------|--------|--------|----------|
-| n | `]t` | Jump to next Todo | |
-| n | `[t` | Jump to previous Todo | |
-| n | `<leader>qt` | Add all Todos to the quick fix list | Quick (fix list) todos |
-| n | `<leader>st` | Search Todos in telescope | Search todos |
