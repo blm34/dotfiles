@@ -53,7 +53,7 @@ which has debugpy installed into it.
 | n | `gcc` | Comment the current line | Give current comment |
 | n | `dgc` | Delete the comment block | |
 | n | `<leader>i` | Toggle the word under the cursor (e.g. True -> False) | Invert |
-| n | `<leader>/` | Jump to a location using Flash | Search |
+| n | `<CR>` | Jump to a location using Flash | Search |
 | n | `z=` | Show spelling suggestions with which-key | |
 
 ### Visual ###
