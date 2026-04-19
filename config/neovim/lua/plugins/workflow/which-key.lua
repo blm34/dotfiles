@@ -30,13 +30,13 @@ return {
         spec = {
             { "<leader>c", group = "Code" },
             { "<leader>d", group = "Debug" },
-            { "<leader>f", group = "Files" },
             { "<leader>g", group = "Git" },
             { "<leader>h", group = "Harpoon" },
             { "<leader>q", group = "QFL" },
+            { "<leader>r", group = "Code Runners" },
             { "<leader>s", group = "Telescope" },
             { "<leader>t", group = "Test" },
-            { "<leader>r", group = "Code Runners" },
+            { "<leader>w", group = "Workspace (tab)" },
         }
     },
     keys = {
