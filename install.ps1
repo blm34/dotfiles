@@ -64,3 +64,14 @@ function Symlink-Path {
         Write-Error "Failed to create symlink`: $_"
     }
 }
+
+#############################
+##  Install Neovim Config  ##
+#############################
+Write-Host "`n========= Neovim ========"
+Check-Dependencies -Name "Neovim" `
+                   -Dependencies "nvim", "git", "rg", "lazygit", "npm", "tree-sitter"
+
+Symlink-Path -Name "Neovim" `
+             -LinkPath "$env:LOCALAPPDATA\nvim" `
+             -TargetPath "$RootDir\config\neovim"
