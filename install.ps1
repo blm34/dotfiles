@@ -75,3 +75,13 @@ Check-Dependencies -Name "Neovim" `
 Symlink-Path -Name "Neovim" `
              -LinkPath "$env:LOCALAPPDATA\nvim" `
              -TargetPath "$RootDir\config\neovim"
+
+##########################
+##  Install .gitconfig  ##
+##########################
+Write-Host "`n========== Git =========="
+Check-Dependencies -Name "Git" `
+                   -Dependencies "git", "vim"
+
+$gitConfigInstall = Join-Path $PSScriptRoot "config" "git" "setup_config.ps1"
+& $gitConfigInstall

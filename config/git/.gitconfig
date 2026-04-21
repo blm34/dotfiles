@@ -1,0 +1,19 @@
+[core]
+    editor = vim
+    fileMode = false
+[color]
+    ui = auto
+[pull]
+	rebase = merges
+[fetch]
+	prune = true
+[alias]
+	pushfwl = push --force-with-lease
+	wdiff = diff --word-diff
+	sdiff = diff --staged
+	logog = log --oneline --graph
+    lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+[rebase]
+	autostash = true
+[diff]
+    algorithm = histogram
