@@ -85,3 +85,14 @@ Check-Dependencies -Name "Git" `
 
 $gitConfigInstall = Join-Path $PSScriptRoot "config" "git" "setup_config.ps1"
 & $gitConfigInstall
+
+############################
+## Install Lazygit Config ##
+############################
+Write-Host "`n======== Lazygit ========"
+Check-Dependencies -Name "Lazygit" `
+                   -Dependencies "lazygit", "git", "delta"
+
+Symlink-Path -Name "Lazygit" `
+             -LinkPath "$env:LOCALAPPDATA\lazygit\config.yml" `
+             -TargetPath "$RootDir\config\lazygit\config.yml"

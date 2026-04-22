@@ -1,0 +1,32 @@
+gui:
+  nerdFontsVersion: "3"
+  theme:
+    activeBorderColor:
+      - "#e6c384"
+      - "bold"
+    inactiveBorderColor:
+      - "#54546d"
+    searchingActiveBorderColor:
+      - "#7fb4ca"
+      - "bold"
+    optionsTextColor:
+      - "#7fb4ca"
+    selectedLineBgColor:
+      - "#2d4f67"
+    cherryPickedCommitFgColor:
+      - "#7fb4ca"
+    cherryPickedCommitBgColor:
+      - "#957fb8"
+    markedBaseCommitFgColor:
+      - "#7fb4ca"
+    markedBaseCommitBgColor:
+      - "#ff9e3b"
+    unstagedChangesColor:
+      - "#e82424"
+    defaultFgColor:
+      - "#dcd7ba"
+git:
+  pagers:
+    - pager: delta --dark --paging=never --line-numbers --hyperlinks --hyperlinks-file-link-format="lazygit-edit://{path}:{line}"
+os:
+  editPreset: nvim
