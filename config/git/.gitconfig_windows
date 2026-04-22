@@ -1,2 +1,4 @@
 [core]
 	autocrlf = true
+[delta]
+    word-diff-regex = \\S+
