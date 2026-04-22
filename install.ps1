@@ -47,8 +47,8 @@ function Symlink-Path {
 
     switch (Get-SymlinkStatus -LinkPath $LinkPath -TargetPath $TargetPath) {
         "OK"           { Write-Host "$Name config already linked correctly, skipping"; return }
-        "WrongTarget"  { Write-Warning "$Name symlink exists but points to the wrong target, skipping" ; return }
-        "NotASymlink"  { Write-Error "$Name path exists but is not a symlink, skipping"; return }
+        "WrongTarget"  { Write-Warning "$LinkPath symlink exists but points to the wrong target, skipping" ; return }
+        "NotASymlink"  { Write-Error "$LinkPath exists but is not a symlink, skipping"; return }
         "Missing"      { Write-Host "Linking config for $Name..." }
     }
 
