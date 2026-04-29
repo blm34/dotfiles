@@ -15,6 +15,7 @@
     lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %<(72,trunc)%s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
     lga = log --all --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %<(72,trunc)%s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
     pub = "!git push -u origin $(git rev-parse --abbrev-ref HEAD)"
+    branches = branch --sort=-committerdate --format='%(color:yellow)%(refname:short)%(color:reset) - %(color:cyan)%(committerdate:relative)%(color:reset) %(authorname)'
 [rebase]
 	autostash = true
 [diff]
