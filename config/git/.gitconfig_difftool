@@ -1,0 +1,17 @@
+[core]
+    pager = delta
+[delta]
+    navigate = true
+    dark = true
+    line-numbers = true
+    plus-style = "syntax #1a3a2a"
+    plus-emph-style = "bold syntax #0a9960"
+    minus-style = "syntax #43242b"
+    minus-emph-style = "bold syntax #e84444"
+    line-numbers-plus-style = "#76946a"
+    line-numbers-minus-style = "#e82424"
+    line-numbers-zero-style = "#54546d"
+    hunk-header-style = "syntax #1f1f28"
+    hunk-header-decoration-style = "#54546d box"
+[interactive]
+    diffFilter = delta --color-only
