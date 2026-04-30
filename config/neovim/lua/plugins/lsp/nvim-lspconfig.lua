@@ -79,7 +79,7 @@ return {
             vim.diagnostic.hide(virtual_lines_namespace)
             vim.diagnostic.show(nil, bufnr, nil, {
                 virtual_text = false,
-                signs = true,
+                signs = false,
                 underline = true,
                 update_in_insert = false,
                 severity_sort = true,
