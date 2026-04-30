@@ -15,6 +15,19 @@ local function toggle_details()
     end
 end
 
+local function copy_filepath()
+    local oil
+    require("oil")
+    local entry = oil.get_cursor_entry()
+    local dir = oil.get_current_dir()
+    if entry and dir then
+        local filepath = dir .. entry.name
+        vim.fn.setreg("+", filepath)  -- System clipboard
+        vim.fn.setreg("\"", filepath) -- Unnamed register
+        vim.notify("Copied: " .. filepath)
+    end
+end
+
 return {
     "stevearc/oil.nvim",
     lazy = false,
@@ -39,7 +52,8 @@ return {
             ["<C-s>"] = { "actions.select", opts = { horizontal = true } },
             ["<C-t>"] = { "actions.select", opts = { tab = true } },
 
-            ["gd"] = { callback = toggle_details, desc = "Toggle file details view" }
+            ["gd"] = { callback = toggle_details, desc = "Toggle file details view" },
+            ["gy"] = { callback = copy_filepath, desc = "Copy path" }
         },
         view_options = {
             show_hidden = true,
