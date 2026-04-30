@@ -25,5 +25,5 @@
 [merge]
     conflictstyle = diff3
 [include]
-    path = ./.gitconfig_delta
+    path = ./.gitconfig_difftool
     path = ./.gitconfig_mergetool
