@@ -77,7 +77,7 @@ Symlink-Path -Name "Neovim" `
              -TargetPath "$RootDir\config\neovim"
 
 ##########################
-##  Install .gitconfig  ##
+##  Install Git Config  ##
 ##########################
 Write-Host "`n========== Git =========="
 Check-Dependencies -Name "Git" `
