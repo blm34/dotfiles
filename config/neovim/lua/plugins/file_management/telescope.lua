@@ -38,24 +38,20 @@ return {
         require('telescope').setup({
             defaults = {
                 mappings = {
-                    n = {
+                    i = {
                         -- s to open selection in a horizontal split
-                        ["s"] = function(prompt_bufnr)
+                        ["<c-s>"] = function(prompt_bufnr)
                             local selection = action_state.get_selected_entry()
                             actions.close(prompt_bufnr)
                             vim.cmd("split " .. selection.path)
                         end,
-                        -- v to open selection in a vertical split
-                        ["v"] = function(prompt_bufnr)
+                    },
+                    n = {
+                        -- s to open selection in a horizontal split
+                        ["<c-s>"] = function(prompt_bufnr)
                             local selection = action_state.get_selected_entry()
                             actions.close(prompt_bufnr)
-                            vim.cmd("vsplit " .. selection.path)
-                        end,
-                        -- t to open in a new tab
-                        ["t"] = function(prompt_bufnr)
-                            local selection = action_state.get_selected_entry()
-                            actions.close(prompt_bufnr)
-                            vim.cmd("tabedit " .. selection.path)
+                            vim.cmd("split " .. selection.path)
                         end,
                     },
                 },
