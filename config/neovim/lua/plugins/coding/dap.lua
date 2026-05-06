@@ -13,7 +13,13 @@ return {
     {
         "mfussenegger/nvim-dap",
         lazy = true,
-        dependencies = { "rcarriga/nvim-dap-ui" },
+        dependencies = {
+            "rcarriga/nvim-dap-ui",
+            "nvim-neotest/nvim-nio",
+            "theHamsta/nvim-dap-virtual-text",
+            "williamboman/mason.nvim",
+            "jay-babu/mason-nvim-dap.nvim",
+        },
         keys = {
             {
                 "<leader>dc",
@@ -51,20 +57,6 @@ return {
                 silent = true,
             },
             {
-                "<leader>dk",
-                function() require("dap.ui.widgets").hover() end,
-                desc = "Show hover",
-                noremap = true,
-                silent = true,
-            },
-            {
-                "<leader>dr",
-                function() require("dap").repl_open() end,
-                desc = "Open repl",
-                noremap = true,
-                silent = true,
-            },
-            {
                 "<leader>dl",
                 function() require("dap").run_last() end,
                 desc = "Re-run last session",
@@ -92,17 +84,57 @@ return {
                 noremap = true,
                 silent = true,
             },
+            {
+                "<leader>du",
+                desc = "Toggle DAP UI",
+                function() require("dapui").toggle() end,
+                noremap = true,
+                silent = true,
+            }
         },
         config = function()
             local dap = require("dap")
             local dapui = require("dapui")
 
+            -- mason-nvim-dap setup
+            require("mason-nvim-dap").setup({
+                ensure_installed = {
+                    "python",
+                    "bash",
+                },
+                automatic_installation = true,
+                handlers = {
+                    function(config)
+                        require("mason-nvim-dap").default_setup(config)
+                    end,
+
+                    python = function()
+                        -- setup defined below - do nothing here
+                    end,
+                },
+            })
+
+            -- DAP UI setup
+            dapui.setup({})
+
+            -- Virtual text setup
+            require("nvim-dap-virtual-text").setup({
+                highlight_changed_variables = true,
+                highlight_new_as_changed = true,
+                show_stop_reason = true,
+                only_first_definition = false,
+                all_references = false,
+                virt_text_pos = 'eol',
+            })
+
+            -- Python adapter
             dap.adapters.python = {
                 type = "executable",
                 command = get_python_path(),
                 args = { "-m", "debugpy.adapter" },
                 options = {
                     detached = false,
+                    initialize_timeout_sec = 10,
                 },
             }
 
@@ -138,40 +170,6 @@ return {
             dap.listeners.before.event_exited.dapui_config = function()
                 dapui.close()
             end
-        end,
-    },
-
-    -- DAP UI
-    {
-        "rcarriga/nvim-dap-ui",
-        dependencies = {
-            "mfussenegger/nvim-dap",
-            "nvim-neotest/nvim-nio",
-        },
-        lazy = true,
-        config = function()
-            local dapui = require("dapui")
-            dapui.setup({})
-
-            local opts = { noremap = true, silent = true, desc = "Toggle DAP UI" }
-            vim.keymap.set("n", "<leader>du", function() dapui.toggle() end, opts)
-        end,
-    },
-
-    -- Virtual text for variables
-    {
-        "theHamsta/nvim-dap-virtual-text",
-        dependencies = { "mfussenegger/nvim-dap" },
-        lazy = true,
-        config = function()
-            require("nvim-dap-virtual-text").setup({
-                highlight_changed_variables = true,
-                highlight_new_as_changed = true,
-                show_stop_reason = true,
-                only_first_definition = false,
-                all_references = false,
-                virt_text_pos = 'eol',
-            })
         end,
     },
 }

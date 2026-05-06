@@ -16,11 +16,6 @@ Neovim configuration should be located at:
 * [npm](https://nodejs.org/en/download/)
 * [tree-sitter-cli](https://github.com/tree-sitter/tree-sitter/blob/master/crates/cli/README.md)
 
-### Python
-
-To debug python code, a virtual environment must exist at `~/.virtualenvs/debugpy`
-which has debugpy installed into it.
-
 ## Keymaps
 
 `<leader>` is mapped to `<space>`
