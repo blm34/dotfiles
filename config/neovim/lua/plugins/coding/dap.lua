@@ -1,4 +1,5 @@
-local function get_python_path()
+-- Get the venv containing debugpy
+local function get_debugpy_venv_path()
     local is_windows = require("helpers.os").is_windows
     local mason_path = vim.fn.stdpath("data")
     if is_windows then
@@ -8,6 +9,54 @@ local function get_python_path()
     end
 end
 
+-- Get the environment to run the code from
+local is_windows = vim.fn.has("win32") == 1
+
+local function is_executable(path)
+    if not path or path == "" then return false end
+    return vim.uv.fs_stat(path) ~= nil
+end
+
+local python_path_within_venv = is_windows
+    and vim.fs.joinpath("Scripts", "python.exe")
+    or vim.fs.joinpath("bin", "python")
+
+local function python_in_dir(dir)
+    if not dir or dir == "" then return nil end
+    local venv_names = { "venv", ".venv", "env", ".env" }
+    for _, venv_name in ipairs(venv_names) do
+        local path = vim.fs.joinpath(dir, venv_name, python_path_within_venv)
+        if is_executable(path) then return path end
+    end
+end
+
+local function find_venv_upwards(start_dir)
+    local cur = vim.fn.fnamemodify(start_dir, ":p")
+    local prev = ""
+    while cur ~= prev do
+        local py = python_in_dir(cur)
+        if py then return py end
+        prev = cur
+        cur = vim.fn.fnamemodify(cur, ":h")
+    end
+end
+
+local function get_python_env_path()
+    local venv = os.getenv("VIRTUAL_ENV")
+    if venv and venv ~= "" then
+        local path = vim.fs.joinpath(venv, python_path_within_venv)
+        if is_executable(path) then return path end
+    end
+
+    local buf = vim.api.nvim_buf_get_name(0)
+    local dir = buf ~= "" and vim.fn.fnamemodify(buf, ":h") or vim.fn.getcwd()
+    local found = find_venv_upwards(dir)
+    if found then return found end
+    if vim.fn.executable("python3") == 1 then return "python3" end
+    if vim.fn.executable("python") == 1 then return "python" end
+end
+
+-- Main pluging config
 return {
     -- Core DAP
     {
@@ -130,7 +179,7 @@ return {
             -- Python adapter
             dap.adapters.python = {
                 type = "executable",
-                command = get_python_path(),
+                command = get_debugpy_venv_path(),
                 args = { "-m", "debugpy.adapter" },
                 options = {
                     detached = false,
@@ -144,7 +193,7 @@ return {
                     request = "launch",
                     name = "Launch file",
                     program = "${file}",
-                    pythonPath = get_python_path,
+                    pythonPath = get_python_env_path,
                     console = "integratedTerminal",
                     justMyCode = false,
                 }
