@@ -30,6 +30,11 @@ return {
             function() require("telescope.builtin").help_tags() end,
             desc = 'Search help tags in telescope',
         },
+        {
+            '<leader>sp',
+            "<cmd>Telescope projects<cr>",
+            desc = 'Search projects',
+        },
     },
     config = function()
         local actions = require('telescope.actions')
@@ -57,5 +62,7 @@ return {
                 },
             },
         })
+
+        require("telescope").load_extension("projects")
     end,
 }
