@@ -7,7 +7,7 @@ return {
             "amansingh-afk/milli.nvim",
         },
         config = function()
-            local splash = require("milli").load({ splash = "blackhole" })
+            local splash = require("milli").load({ splash = "neovim" })
 
             require("dashboard").setup({
                 theme = "doom",
@@ -62,7 +62,7 @@ return {
                 },
             })
 
-            require("milli").dashboard({ splash = "blackhole", loop = true })
+            require("milli").dashboard({ splash = "neovim", loop = true })
         end,
     },
 }
