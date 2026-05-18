@@ -21,6 +21,7 @@ tools, run `install.ps1` in PowerShell, or `install.sh` in bash.
     * [Ripgrep](#ripgrep-installation)
     * [npm](#npm-installation)
     * [Treesitter](#tree-sitter-installation)
+    * [fd](#fd-installation)
 
 ## Configs
 
@@ -41,6 +42,7 @@ Config sets up keymaps and plugins.
 * [Lazygit](#lazygit-installation)
 * [npm](#npm-installation)
 * [Tree Sitter](#tree-installation)
+* [fd](#fd-installation)
 </details>
 
 ### Git
@@ -313,3 +315,46 @@ Install with npm:
 ```
 npm install tree-sitter-cli
 ```
+
+### fd Installation
+
+Details found on [fd's github](https://github.com/sharkdp/fd).
+
+<details>
+    <summary>
+        Windows
+    </summary>
+
+```powershell
+winget install -e --id sharkdp.fd
+```
+</details>
+
+<details>
+    <summary>
+        Arch
+    </summary>
+
+```bash
+pacman -S fd
+```
+</details>
+
+<details>
+    <summary>
+        Ubuntu
+    </summary>
+
+```bash
+apt install fd-find
+```
+
+The default binary is called `fdfind` as `fd` is used by another package. After
+installation run
+
+```bash
+ln -s $(which fdfind) ~/.local/bin/fd
+```
+
+to use `fd`. (Ensure `$Home/.local/bin` is in `$PATH`).
+</details>
