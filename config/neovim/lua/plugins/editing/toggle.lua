@@ -10,7 +10,6 @@ return {
     },
     opts = {
         mappings = {
-            { 'True',  'False' },
             { 'DEBUG', 'INFO', 'WARNING', 'ERROR', 'CRITICAL' },
         },
     },
