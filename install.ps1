@@ -70,7 +70,7 @@ function Symlink-Path {
 #############################
 Write-Host "`n========= Neovim ========"
 Check-Dependencies -Name "Neovim" `
-                   -Dependencies "nvim", "git", "rg", "lazygit", "npm", "tree-sitter"
+                   -Dependencies "nvim", "git", "rg", "lazygit", "npm", "tree-sitter", "fd"
 
 Symlink-Path -Name "Neovim" `
              -LinkPath "$env:LOCALAPPDATA\nvim" `
