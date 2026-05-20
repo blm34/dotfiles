@@ -16,6 +16,11 @@ return {
             desc = 'Search file contents in telescope',
         },
         {
+            '<leader>sw',
+            function() require("telescope.builtin").grep_string() end,
+            desc = 'Search word under cursor in telescope',
+        },
+        {
             '<leader>sb',
             function() require("telescope.builtin").buffers() end,
             desc = 'Search buffers in telescope',
