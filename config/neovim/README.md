@@ -92,7 +92,7 @@ they are typed. Keymaps are sorted into namespaces where appropriate.
 | n | `<CM-l>` | Increase window width | |
 | n | `<CM-j>` | Decrease window height | |
 | n | `<CM-k>` | Increase window height | |
-| t | `<ESC>` | Exit terminal mode (to normal mode) | |
+| t | `<S-ESC>`| Exit terminal mode (to normal mode) | |
 | n | `<leader>1` | Toggle terminal 1 (valid for 1-9) | |
 
 #### LSP

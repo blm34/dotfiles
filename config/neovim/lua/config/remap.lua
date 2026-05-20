@@ -46,9 +46,6 @@ vim.keymap.set("n", "<CM-l>", function() vim.cmd("vertical resize +1") end, { de
 vim.keymap.set("n", "<CM-j>", function() vim.cmd("resize -1") end, { desc = "Decrease window height" })
 vim.keymap.set("n", "<CM-k>", function() vim.cmd("resize +1") end, { desc = "Increase window height" })
 
--- Exit terminal mode with <ESC>
-vim.keymap.set("t", "<Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
-
 -- Move between windows with Alt+direction in terminal mode
 vim.keymap.set("t", "<M-h>", "<C-\\><C-n><C-w>h", { desc = "Move to window to left" })
 vim.keymap.set("t", "<M-j>", "<C-\\><C-n><C-w>j", { desc = "Move to window to right" })
