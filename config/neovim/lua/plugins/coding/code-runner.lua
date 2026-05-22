@@ -1,6 +1,7 @@
 return {
     "blm34/code-runner.nvim",
     opts = {
+        max_slots = 4,
         busy_behaviour = {
             behaviour = "ask",
         },
@@ -50,6 +51,16 @@ return {
             "<leader>rat",
             function() require("code-runner").toggle_all_terminals() end,
             desc = "Toggle all terminals",
+        },
+        {
+            "<leader>rl",
+            function() require("code-runner").rerun_last_command() end,
+            desc = "Rerun last command",
+        },
+        {
+            "<leader>rnl",
+            function() require("code-runner").rerun_last_command(true) end,
+            desc = "Rerun last command in new terminal",
         },
     },
 }
