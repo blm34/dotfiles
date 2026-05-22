@@ -39,6 +39,11 @@ return {
             { "<leader>sg", group = "Telescope Git" },
             { "<leader>t",  group = "Test" },
             { "<leader>w",  group = "Workspace (tab)" },
+
+            -- LSP builtins
+            { "gd",         desc = "Go to definition" },
+            { "gD",         desc = "Go to declaration" },
+
         }
     },
     keys = {
