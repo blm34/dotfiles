@@ -104,3 +104,18 @@ Check-Dependencies -Name "Lazygit" `
 Symlink-Path -Name "Lazygit" `
              -LinkPath "$env:LOCALAPPDATA\lazygit\config.yml" `
              -TargetPath "$RootDir\config\lazygit\config.yml"
+
+#########################
+## Install Yazi Config ##
+#########################
+Write-Host "`n========== Yazi ========="
+# Note `pdfinfo` is a command used by 'poppler'
+# Note `magick` is a command used by 'ImageMagick'
+Check-Dependencies -Name "Yazi" `
+             -Dependencies "yazi", "file", "ffmpeg", "7z", "jq", "pdfinfo", "fd", "rg", "fzf", "zoxide", "resvg", "magick"
+
+Symlink-Path -Name "Yazi" `
+             -LinkPath "$env:APPDATA\yazi\config" `
+             -TargetPath "$RootDir\config\yazi"
+Write-Host "Installing Yazi plugins..."
+ya pkg install
