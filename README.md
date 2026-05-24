@@ -13,6 +13,7 @@ tools, run `install.ps1` in PowerShell, or `install.sh` in bash.
     * [Neovim](#Neovim)
     * [Git](#Git)
     * [Lazygit](#lazygit)
+    * [Yazi](#yazi)
     * [PowerShell](#powershell)
 * [Installation](#Installation)
     * [Git](#git-installation)
@@ -23,6 +24,16 @@ tools, run `install.ps1` in PowerShell, or `install.sh` in bash.
     * [npm](#npm-installation)
     * [Treesitter](#tree-sitter-installation)
     * [fd](#fd-installation)
+    * [yazi](#yazi-installation)
+    * [file](#file-installation)
+    * [ffmpeg](#ffmpeg-installation)
+    * [7-Zip](#7-zip-installation)
+    * [jq](#jq-installation)
+    * [poppler](#poppler-installation)
+    * [fzf](#fzf-installation)
+    * [zoxide](#zoxide-installation)
+    * [resvg](#resvg-installation)
+    * [ImageMagick](#imagemagick-installation)
 
 ## Configs
 
@@ -73,6 +84,27 @@ diff).
 * [Lazygit](#lazygit-installation)
 * [Git](#git-installation)
 * [Delta](#delta-installation)
+</details>
+
+### Yazi
+
+<details>
+    <summary>
+        Dependencies
+    </summary>
+
+* [yazi](#yazi-installation)
+* [file](#file-installation)
+* [ffmpeg](#ffmpeg-installation)
+* [7-Zip](#7-zip-installation)
+* [jq](#jq-installation)
+* [poppler](#poppler-installation)
+* [fd](#fd-installation)
+* [rg](#ripgrep-installation)
+* [fzf](#fzf-installation)
+* [zoxide](#zoxide-installation)
+* [resvg](#resvg-installation)
+* [ImageMagick](#image-magick-installation)
 </details>
 
 ### PowerShell
@@ -363,3 +395,234 @@ ln -s $(which fdfind) ~/.local/bin/fd
 
 to use `fd`. (Ensure `$Home/.local/bin` is in `$PATH`).
 </details>
+
+### Yazi Installation
+
+Details found in [Yazi's docs](https://yazi-rs.github.io/docs/installation)
+
+<details>
+    <summary>
+        Windows
+    </summary>
+
+```powershell
+winget install sxyazi.yazi
+```
+
+To use `file(1)` add `<Git_Installed_Directory>\usr\bin\file.exe` to the
+`YAZI_FILE_ONE` environment variable.
+</details>
+
+<details>
+    <summary>
+        Arch
+    </summary>
+
+```bash
+sudo pacman -S yazi
+```
+</details>
+
+### File Installation
+
+<details>
+    <summary>
+        Windows
+    </summary>
+
+Easiest method is to install [git-for-windows](#git-installation) and use the
+exe that comes with that.
+</details>
+
+### FFmpeg Installation
+
+Details found on [FFmpeg's website](https://www.ffmpeg.org/download.html)
+
+<details>
+    <summary>
+        Windows
+    </summary>
+
+```powershell
+winget install Gyan.FFmpeg
+```
+</details>
+
+<details>
+    <summary>
+        Arch
+    </summary>
+
+```powershell
+sudo pacman -S ffmpeg
+```
+</details>
+
+### 7-Zip Installation
+
+Details found on [7-Zip's website](https://www.7-zip.org/download.html)
+
+<details>
+    <summary>
+        Windows
+    </summary>
+
+```powershell
+winget install 7zip.7zip
+```
+</details>
+
+<details>
+    <summary>
+        Arch
+    </summary>
+
+```powershell
+sudo pacman -S 7zip
+```
+</details>
+
+### jq Installation
+
+Details found on [jq's website](https://jqlang.org)
+
+<details>
+    <summary>
+        Windows
+    </summary>
+
+```powershell
+winget install jqlang.jq
+```
+</details>
+
+<details>
+    <summary>
+        Arch
+    </summary>
+
+```powershell
+sudo pacman -S jq
+```
+</details>
+
+
+### Poppler Installation
+
+Details found on [Poppler's website](https://poppler.freedesktop.org)
+
+
+<details>
+    <summary>
+        Windows
+    </summary>
+
+```powershell
+winget install oschwartz10612.Poppler
+```
+</details>
+
+<details>
+    <summary>
+        Arch
+    </summary>
+
+```powershell
+sudo pacman -S poppler
+```
+</details>
+
+### fzf Installation
+
+Details found on [fzf's github](https://github.com/junegunn/fzf)
+
+<details>
+    <summary>
+        Windows
+    </summary>
+
+```powershell
+winget install junegunn.fzf
+```
+</details>
+
+<details>
+    <summary>
+        Arch
+    </summary>
+
+```powershell
+sudo pacman -S fzf
+```
+</details>
+
+### Zoxide Installation
+
+Details found on [Zoxide's github](https://github.com/ajeetdsouza/zoxide)
+
+<details>
+    <summary>
+        Windows
+    </summary>
+
+```powershell
+winget install ajeetdsouza.zoxide
+```
+</details>
+
+<details>
+    <summary>
+        Arch
+    </summary>
+
+```powershell
+sudo pacman -S zoxide
+```
+</details>
+
+### resvg Installation
+
+Details found on [resvg's github](https://github.com/linebender/resvg)
+
+<details>
+    <summary>
+        Windows
+    </summary>
+
+Must be installed from [github releases](https://github.com/linebender/resvg/releases)
+</details>
+
+<details>
+    <summary>
+        Arch
+    </summary>
+
+```powershell
+sudo pacman -S resvg
+```
+</details>
+
+### ImageMagick Installation
+
+Details found on [ImageMagick's website](https://imagemagick.org)
+
+<details>
+    <summary>
+        Windows
+    </summary>
+
+```powershell
+winget install ImageMagick.ImageMagick
+```
+</details>
+
+<details>
+    <summary>
+        Arch
+    </summary>
+
+```powershell
+sudo pacman -S imagemagick
+```
+</details>
+
