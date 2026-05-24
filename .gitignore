@@ -1,1 +1,4 @@
 config/neovim/lazy-lock.json
+
+# Yazi
+config/yazi/flavors/
