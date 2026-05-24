@@ -65,6 +65,14 @@ function Symlink-Path {
     }
 }
 
+################
+## Powershell ##
+################
+Write-Host "`n====== Powershell ======="
+Symlink-Path -Name "Powershell" `
+             -LinkPath $PROFILE `
+             -TargetPath "$RootDir\config\powershell\Microsoft.PowerShell_profile.ps1"
+
 #############################
 ##  Install Neovim Config  ##
 #############################

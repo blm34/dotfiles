@@ -13,6 +13,7 @@ tools, run `install.ps1` in PowerShell, or `install.sh` in bash.
     * [Neovim](#Neovim)
     * [Git](#Git)
     * [Lazygit](#lazygit)
+    * [PowerShell](#powershell)
 * [Installation](#Installation)
     * [Git](#git-installation)
     * [Lazygit](#lazygit-installation)
@@ -73,6 +74,10 @@ diff).
 * [Git](#git-installation)
 * [Delta](#delta-installation)
 </details>
+
+### PowerShell
+
+Set up aliases and functions. Only installed on Windows.
 
 ## Installation
 
