@@ -1,4 +1,6 @@
+# Neovim
 config/neovim/lazy-lock.json
 
 # Yazi
 config/yazi/flavors/
+config/yazi/plugins/

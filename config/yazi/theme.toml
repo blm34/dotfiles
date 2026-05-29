@@ -1,3 +1,19 @@
 [flavor]
 dark = "kanagawa"
 light = "kanagawa"
+
+[git]
+unknown_sign = " "
+modified_sign = "M"
+added_sign = "A"
+untracked_sign = "?"
+ignored_sign = " "
+deleted_sign = "D"
+updated_sign = "≠"
+clean_sign = " "
+
+modified = { fg = "#d7af00" }
+added = { fg = "#5faf5f" }
+untracked = { fg = "#6c6c6c" }
+deleted = { fg = "#d75f5f" }
+updated = { fg = "#d7005f" }
