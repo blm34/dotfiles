@@ -8,6 +8,11 @@ use = "yazi-rs/plugins:full-border"
 rev = "c2c16c8"
 hash = "1e3b6c8b03dae81c3672ec9e9700b666"
 
+[[plugin.deps]]
+use = "yazi-rs/plugins:smart-filter"
+rev = "c2c16c8"
+hash = "c8695b60cdf205d9ee71efcba4fd40af"
+
 [[flavor.deps]]
 use = "dangooddd/kanagawa"
 rev = "04985d1"
