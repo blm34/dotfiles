@@ -17,11 +17,15 @@ return {
 
             local cursor_line = vim.api.nvim_win_get_cursor(0)[1] - 1
 
+            -- Check current cursor line still exists in buffer
+            local line_count = vim.api.nvim_buf_line_count(bufnr)
+            if cursor_line >= line_count then return end
+
             local all_diagnostics = vim.diagnostic.get(bufnr)
 
             local virtual_text_diagnostics = {}
             for _, d in ipairs(all_diagnostics) do
-                if d.lnum ~= cursor_line then
+                if d.lnum ~= cursor_line and d.lnum < line_count then
                     table.insert(virtual_text_diagnostics, d)
                 end
             end
