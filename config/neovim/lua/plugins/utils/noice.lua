@@ -7,7 +7,7 @@ return {
     },
     keys = {
         {
-            "<leader>no",
+            "<leader>nl",
             function() require("noice").cmd("all") end,
             desc = "Message log (Noice)",
         },
@@ -18,8 +18,9 @@ return {
         },
     },
     opts = {
-        cmdline = {
-            view = "cmdline",
-        },
+        cmdline = { enabled = false },
+        messages = { enabled = false },
+        popupmenu = { enabled = false },
+        notify = { enabled = true },
     },
 }
