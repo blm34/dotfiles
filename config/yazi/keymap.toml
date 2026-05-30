@@ -378,3 +378,33 @@ desc = "Smart filter"
 on = ["g", "r"]
 run = "plugin cd-git-root"
 desc = "Go to git repo root"
+
+[[mgr.prepend_keymap]]
+on = ["T", "l"]
+run = "plugin toggle-pane min-preview"
+desc = "Show or hide the preview pane"
+
+[[mgr.prepend_keymap]]
+on = ["T", "L"]
+run = "plugin toggle-pane max-preview"
+desc = "Maximise or restore the preview pane"
+
+[[mgr.prepend_keymap]]
+on = ["T", "c"]
+run = "plugin toggle-pane min-current"
+desc = "Show or hide the current pane"
+
+[[mgr.prepend_keymap]]
+on = ["T", "C"]
+run = "plugin toggle-pane max-current"
+desc = "Maximise or restore the current pane"
+
+[[mgr.prepend_keymap]]
+on = ["T", "h"]
+run = "plugin toggle-pane min-parent"
+desc = "Show or hide the parent pane"
+
+[[mgr.prepend_keymap]]
+on = ["T", "H"]
+run = "plugin toggle-pane max-parent"
+desc = "Maximise or restore the parent pane"
