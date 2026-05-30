@@ -23,6 +23,11 @@ use = "yazi-rs/plugins:toggle-pane"
 rev = "c2c16c8"
 hash = "77c0dd89349f367282c5ea1999754915"
 
+[[plugin.deps]]
+use = "imsi32/yatline"
+rev = "c5d4b48"
+hash = "91c9b9a3355e213b801fdb0c5fc92dc1"
+
 [[flavor.deps]]
 use = "dangooddd/kanagawa"
 rev = "04985d1"
