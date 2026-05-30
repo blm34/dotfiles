@@ -28,6 +28,11 @@ use = "imsi32/yatline"
 rev = "c5d4b48"
 hash = "91c9b9a3355e213b801fdb0c5fc92dc1"
 
+[[plugin.deps]]
+use = "llanosrocas/githead"
+rev = "317d09f"
+hash = "2fad3b97cff27c57ec333330dce2b074"
+
 [[flavor.deps]]
 use = "dangooddd/kanagawa"
 rev = "04985d1"

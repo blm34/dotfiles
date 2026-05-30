@@ -56,7 +56,9 @@ require("yatline"):setup({
             section_a = {
                 { type = "line", name = "tabs" },
             },
-            section_b = {},
+            section_b = {
+                { type = "coloreds", name = "githead" },
+            },
             section_c = {},
         },
         right = {
@@ -99,4 +101,15 @@ require("yatline"):setup({
             },
         },
     },
+})
+
+require("githead"):setup({
+    branch_prefix = "on",
+    branch_color = "#7aa2f7",
+    branch_symbol = " ",
+    branch_borders = "()",
+
+    tag_symbol = "󰓼",
+    always_show_tag = true,
+    tag_color = "#bb9af7",
 })
