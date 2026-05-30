@@ -13,6 +13,11 @@ use = "yazi-rs/plugins:smart-filter"
 rev = "c2c16c8"
 hash = "c8695b60cdf205d9ee71efcba4fd40af"
 
+[[plugin.deps]]
+use = "ciarandg/cd-git-root"
+rev = "a0e0f4b"
+hash = "e98b7ce77798c7932a24806a187b4b5b"
+
 [[flavor.deps]]
 use = "dangooddd/kanagawa"
 rev = "04985d1"
