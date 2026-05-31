@@ -14,10 +14,32 @@ local function delete_qfl_line()
     vim.fn.cursor(line, 1)
 end
 
+-- allow deleting a visual selection from qfl
+local function delete_qfl_range()
+    local wininfo = vim.fn.getwininfo(vim.fn.win_getid())[1]
+    local start_line = vim.fn.line("'<")
+    local end_line = vim.fn.line("'>")
+    if wininfo.loclist == 1 then
+        local loclist = vim.fn.getloclist(0)
+        for _ = start_line, end_line do
+            table.remove(loclist, start_line)
+        end
+        vim.fn.setloclist(0, loclist, "r")
+    else
+        local qflist = vim.fn.getqflist()
+        for _ = start_line, end_line do
+            table.remove(qflist, start_line)
+        end
+        vim.fn.setqflist(qflist, "r")
+    end
+    vim.fn.cursor(start_line, 1)
+end
+
 vim.api.nvim_create_autocmd("FileType", {
     pattern = "qf",
     callback = function()
         vim.keymap.set("n", "dd", delete_qfl_line, { buffer = true, desc = "Delete qf entry" })
+        vim.keymap.set("x", "d", delete_qfl_range, { buffer = true, desc = "Delete qf entries" })
     end
 })
 
