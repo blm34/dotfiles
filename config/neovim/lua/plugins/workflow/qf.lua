@@ -35,11 +35,32 @@ local function delete_qfl_range()
     vim.fn.cursor(start_line, 1)
 end
 
+-- Allow opening qfl entry without leaving the qfl window
+local function preview_entry()
+    local wininfo = vim.fn.getwininfo(vim.fn.win_getid())[1]
+    local line = vim.fn.line(".")
+    local list
+    local entry
+    if wininfo.loclist == 1 then
+        list = vim.fn.getloclist(0)
+    else
+        list = vim.fn.getqflist()
+    end
+    entry = list[line]
+    if entry then
+        vim.cmd("wincmd p")
+        vim.cmd("buffer " .. entry.bufnr)
+        vim.fn.cursor(entry.lnum, entry.col)
+        vim.cmd("wincmd p")
+    end
+end
+
 vim.api.nvim_create_autocmd("FileType", {
     pattern = "qf",
     callback = function()
         vim.keymap.set("n", "dd", delete_qfl_line, { buffer = true, desc = "Delete qf entry" })
         vim.keymap.set("x", "d", delete_qfl_range, { buffer = true, desc = "Delete qf entries" })
+        vim.keymap.set("n", "<Space><CR>", preview_entry, { buffer = true, desc = "Preview qf entry" })
     end
 })
 
