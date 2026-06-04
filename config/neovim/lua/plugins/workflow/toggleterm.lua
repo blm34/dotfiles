@@ -55,15 +55,13 @@ apply_keymaps = function(term, is_persistent)
     vim.keymap.set("t", "<C-q>", "<C-\\><C-n>", { buffer = term.bufnr, desc = "Terminal: normal mode" })
 
     if is_persistent then
-        vim.keymap.set("t", "<M-6>", open_floating_terminal, { buffer = term.bufnr, desc = "Open temporary terminal" })
-        vim.keymap.set("t", "<M-7>", function() get_persistent_terminal(1):toggle() end,
+        vim.keymap.set("t", "<M-0>", open_floating_terminal, { buffer = term.bufnr, desc = "Open temporary terminal" })
+        vim.keymap.set("t", "<M-4>", function() get_persistent_terminal(1):toggle() end,
             { buffer = term.bufnr, desc = "Toggle terminal 1" })
-        vim.keymap.set("t", "<M-8>", function() get_persistent_terminal(2):toggle() end,
+        vim.keymap.set("t", "<M-5>", function() get_persistent_terminal(2):toggle() end,
             { buffer = term.bufnr, desc = "Toggle terminal 2" })
-        vim.keymap.set("t", "<M-9>", function() get_persistent_terminal(3):toggle() end,
+        vim.keymap.set("t", "<M-6>", function() get_persistent_terminal(3):toggle() end,
             { buffer = term.bufnr, desc = "Toggle terminal 3" })
-        vim.keymap.set("t", "<M-0>", function() get_persistent_terminal(4):toggle() end,
-            { buffer = term.bufnr, desc = "Toggle terminal 4" })
     end
 end
 
@@ -72,11 +70,10 @@ return {
     event = "VeryLazy",
     version = "*",
     keys = {
-        { "<M-6>", open_floating_terminal,                             desc = "Open temporary terminal" },
-        { "<M-7>", function() get_persistent_terminal(1):toggle() end, desc = "Toggle terminal 1" },
-        { "<M-8>", function() get_persistent_terminal(2):toggle() end, desc = "Toggle terminal 2" },
-        { "<M-9>", function() get_persistent_terminal(3):toggle() end, desc = "Toggle terminal 3" },
-        { "<M-0>", function() get_persistent_terminal(4):toggle() end, desc = "Toggle terminal 4" },
+        { "<M-0>", open_floating_terminal,                             desc = "Open temporary terminal" },
+        { "<M-4>", function() get_persistent_terminal(1):toggle() end, desc = "Toggle terminal 1" },
+        { "<M-5>", function() get_persistent_terminal(2):toggle() end, desc = "Toggle terminal 2" },
+        { "<M-6>", function() get_persistent_terminal(3):toggle() end, desc = "Toggle terminal 3" },
     },
     opts = {
         open_mapping = nil,
