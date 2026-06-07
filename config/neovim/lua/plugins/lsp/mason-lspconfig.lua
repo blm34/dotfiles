@@ -8,12 +8,13 @@ return {
     config = function()
         require("mason-lspconfig").setup({
             ensure_installed = {
-                "basedpyright", -- Python
-                "ruff",         -- Python linting
-                "lua_ls",       -- Lua
-                "bashls",       -- Bash
-                "marksman",     -- Markdown
-                "texlab",       -- Latex
+                "basedpyright",  -- Python
+                "ruff",          -- Python linting
+                "lua_ls",        -- Lua
+                "bashls",        -- Bash
+                "marksman",      -- Markdown
+                "texlab",        -- Latex
+                "rust_analyzer", -- Rust
             },
             automatic_installation = true,
         })
