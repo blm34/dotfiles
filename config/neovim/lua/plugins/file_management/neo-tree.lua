@@ -1,6 +1,5 @@
 return {
     "nvim-neo-tree/neo-tree.nvim",
-    lazy = false,
     dependencies = {
         "nvim-lua/plenary.nvim",
         "MunifRanjim/nui.nvim",
