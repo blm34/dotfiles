@@ -114,8 +114,8 @@ they are typed. Keymaps are sorted into namespaces where appropriate.
 | n | `gr` | Add references to qfl | Go references |
 | n | `gi` | Go to implementation | Go implementation |
 | n | `gt` | Go to type definition | Go type |
-| n | `<leader>cr` | Rename variable | Code Rename |
-| n | `<leader>ca` | Code action | Code action | 
+| n | `grn` | Rename variable | Code Rename |
+| n | `gra` | Code action | Code action | 
 | n | `<leader>cf` | Format the file | Code format | 
 | n | `<leader>caf` | Toggle format on save | Code auto format |
 | n | `<leader>D` | Toggle diagnostics |
