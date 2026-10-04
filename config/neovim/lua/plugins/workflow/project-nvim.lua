@@ -1,10 +1,11 @@
 return {
-    {
-        "ahmedkhalf/project.nvim",
-        main = "project_nvim",
-        event = "VeryLazy",
+    { "DrKJeff16/project.nvim",
+        lazy = true,
         opts = {
-            detection_methods = { "lsp", "pattern" },
+            lsp = {
+                enabled = true,
+                ignore = { "null-ls", "none-ls" },
+            },
 
             patterns = {
                 ".git",
@@ -19,10 +20,9 @@ return {
                 "Cargo.toml",
             },
 
-            silent_chdir = false,
             scope_chdir = "global",
-            ignore_lsp = { "null-ls", "none-ls" },
             show_hidden = true,
+            show_by_name = true,
         },
     },
 }

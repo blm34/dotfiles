@@ -200,6 +200,11 @@ return {
                 },
                 lualine_b = {
                     {
+                        "project",
+                        -- TODO: This could be 'name' if custom names save correctly
+                        format = 'short',
+                    },
+                    {
                         git_branch_and_worktree,
                         cond = function() return vim.bo.buftype ~= "terminal" end
                     },
