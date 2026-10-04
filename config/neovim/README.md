@@ -95,13 +95,11 @@ they are typed. Keymaps are sorted into namespaces where appropriate.
 | n | `<M-1>` | Open first harpoon file | |
 | n | `<M-2>` | Open second harpoon file | |
 | n | `<M-3>` | Open third harpoon file | |
-| n | `<M-4>` | Open fourth harpoon file | |
-| n | `<M-5>` | Switch to last buffer | |
-| n | `<M-6>` | Open temporary floating terminal | |
-| n | `<M-7>` | Toggle terminal 1 | |
-| n | `<M-8>` | Toggle terminal 2 | |
-| n | `<M-9>` | Toggle terminal 3 | |
-| n | `<M-0>` | Toggle terminal 4 | |
+| n | `<M-o>` | Switch to last buffer | |
+| n | `<M-4>` | Toggle terminal 1 | |
+| n | `<M-5>` | Toggle terminal 2 | |
+| n | `<M-6>` | Toggle terminal 3 | |
+| n | `<M-0>` | Open temporary floating terminal | |
 | n & t | `<Esc><Esc>` | Close terminal | |
 | t | `<C-q>` | Terminal: normal mode | |
 
