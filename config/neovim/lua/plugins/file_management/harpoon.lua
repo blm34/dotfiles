@@ -28,7 +28,7 @@ return {
             desc = "Toggle harpoon menu",
         },
         {
-            "<M-5>",
+            "<M-o>",
             "<cmd>b#<cr>",
             desc = "Return to previous buffer",
         },
