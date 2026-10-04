@@ -66,7 +66,6 @@ vim.api.nvim_create_autocmd("FileType", {
 
 return {
     "ten3roberts/qf.nvim",
-    event = "VeryLazy",
     opts = {
         l = {
             number = true,
