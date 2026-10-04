@@ -40,12 +40,6 @@ return {
             function() require("flash").remote() end,
             mode = "o",
             desc = "Remote Flash",
-        },
-        {
-            "<c-s>",
-            function() require("flash").toggle() end,
-            mode = "c",
-            desc = "Toggle Flash Search",
         }
     },
 }
