@@ -34,11 +34,11 @@ vim.keymap.set("n", "<leader>qcq", function() vim.fn.setqflist({}, "r") end, { d
 --<leader>qlq to clear the location list
 vim.keymap.set("n", "<leader>qcl", function() vim.fn.setloclist(0, {}, "r") end, { desc = "Clear the location list" })
 
--- Move between windows with arrow keys
-vim.keymap.set("n", "<Left>", "<C-w>h", { desc = "Move to window to left" })
-vim.keymap.set("n", "<Right>", "<C-w>l", { desc = "Move to window to right" })
-vim.keymap.set("n", "<Down>", "<C-w>j", { desc = "Move to window below" })
-vim.keymap.set("n", "<Up>", "<C-w>k", { desc = "Move to window above" })
+-- Move between windows with ctrl arrow keys
+vim.keymap.set("n", "<C-Left>", "<C-w>h", { desc = "Move to window to left" })
+vim.keymap.set("n", "<C-Right>", "<C-w>l", { desc = "Move to window to right" })
+vim.keymap.set("n", "<C-Down>", "<C-w>j", { desc = "Move to window below" })
+vim.keymap.set("n", "<C-Up>", "<C-w>k", { desc = "Move to window above" })
 
 -- Resize windows with Alt+Arrow keys
 vim.keymap.set("n", "<M-Left>", function() vim.cmd("vertical resize -1") end, { desc = "Decrease window width" })
@@ -47,7 +47,7 @@ vim.keymap.set("n", "<M-Down>", function() vim.cmd("resize -1") end, { desc = "D
 vim.keymap.set("n", "<M-Up>", function() vim.cmd("resize +1") end, { desc = "Increase window height" })
 
 -- Move between windows with Alt+direction in terminal mode
-vim.keymap.set("t", "<Left>", "<C-\\><C-n><C-w>h", { desc = "Move to window to left" })
-vim.keymap.set("t", "<Right>", "<C-\\><C-n><C-w>j", { desc = "Move to window to right" })
-vim.keymap.set("t", "<Down>", "<C-\\><C-n><C-w>k", { desc = "Move to window below" })
-vim.keymap.set("t", "<Up>", "<C-\\><C-n><C-w>l", { desc = "Move to window above" })
+vim.keymap.set("t", "<C-Left>", "<C-\\><C-n><C-w>h", { desc = "Move to window to left" })
+vim.keymap.set("t", "<C-Right>", "<C-\\><C-n><C-w>j", { desc = "Move to window to right" })
+vim.keymap.set("t", "<C-Down>", "<C-\\><C-n><C-w>k", { desc = "Move to window below" })
+vim.keymap.set("t", "<C-Up>", "<C-\\><C-n><C-w>l", { desc = "Move to window above" })
