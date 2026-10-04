@@ -36,7 +36,6 @@ vim.api.nvim_create_autocmd('User', {
 
 return {
     "nvim-mini/mini.files",
-    lazy = false,
     dependencies = {
         "nvim-tree/nvim-web-devicons",
         "folke/snacks.nvim",
