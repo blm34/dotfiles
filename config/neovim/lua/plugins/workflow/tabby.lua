@@ -18,7 +18,7 @@ return {
     dependencies = { "nvim-tree/nvim-web-devicons" },
     keys = {
         { "<leader>wn", "<Cmd>tabnew<CR>",            desc = "New tab" },
-        { "<leader>wc", "<Cmd>tabclose<CR>",          desc = "Close tab" },
+        { "<leader>wq", "<Cmd>tabclose<CR>",          desc = "Close tab" },
         { "<leader>wl", "<Cmd>tabn<CR>",              desc = "Next tab" },
         { "<leader>wh", "<Cmd>tabp<CR>",              desc = "Previous tab" },
         { "<leader>w.", "<Cmd>+tabmove<CR>",          desc = "Move tab right" },
