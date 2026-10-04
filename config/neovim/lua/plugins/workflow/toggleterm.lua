@@ -67,7 +67,6 @@ end
 
 return {
     "akinsho/toggleterm.nvim",
-    event = "VeryLazy",
     version = "*",
     keys = {
         { "<M-0>", open_floating_terminal,                             desc = "Open temporary terminal" },
