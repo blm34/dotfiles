@@ -1,7 +1,7 @@
 return {
     "nvim-mini/mini.ai",
     version = "*",
-    event = { "InsertEnter" },
+    event = "VeryLazy",
     config = function()
         require("mini.ai").setup()
     end
