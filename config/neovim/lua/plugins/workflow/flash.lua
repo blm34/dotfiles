@@ -9,6 +9,14 @@ return {
             char = {
                 jump_labels = true,
                 label = { exclude = "hjkliardcqp" },
+
+                char_actions = function()
+                    return {
+                        [";"] = "next",
+                        [","] = "prev",
+                    }
+                end,
+
                 config = function(opts)
                     opts.autohide = opts.autohide or (vim.fn.mode(true):find("no") and vim.v.operator == "y")
 
