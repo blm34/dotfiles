@@ -29,6 +29,10 @@ return {
                 end
             },
         },
+        label = {
+            before = true,
+            after = false,
+        },
     },
     keys = {
         {
