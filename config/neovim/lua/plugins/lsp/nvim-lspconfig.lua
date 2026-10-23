@@ -68,7 +68,7 @@ return {
         end
 
         -- Autocommand to refresh on movement
-        vim.api.nvim_create_autocmd({ "CursorMoved", "InsertLeave", "BufEnter", "DiagnosticChanged" }, {
+        vim.api.nvim_create_autocmd({ "CursorHold", "InsertLeave", "DiagnosticChanged" }, {
             callback = update_diagnostics,
         })
 
