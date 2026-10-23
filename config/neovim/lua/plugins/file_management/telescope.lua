@@ -3,7 +3,6 @@ return {
     lazy = true,
     dependencies = {
         'nvim-lua/plenary.nvim',
-        'DrKJeff16/project.nvim',
     },
     keys = {
         {
@@ -30,11 +29,6 @@ return {
             '<leader>sh',
             function() require("telescope.builtin").help_tags() end,
             desc = 'Search help tags in telescope',
-        },
-        {
-            '<leader>sp',
-            "<cmd>Telescope projects<cr>",
-            desc = 'Search projects',
         },
         {
             '<leader>sr',
@@ -141,7 +135,5 @@ return {
                 },
             },
         })
-
-        require("telescope").load_extension("projects")
     end,
 }

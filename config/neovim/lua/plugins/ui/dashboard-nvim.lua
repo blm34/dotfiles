@@ -29,13 +29,6 @@ return {
                             action = "Telescope live_grep",
                         },
                         {
-                            icon = " ",
-                            desc = "Recent Projects",
-                            key = "p",
-                            key_format = " [%s]",
-                            action = "Telescope projects",
-                        },
-                        {
                             icon = " ",
                             desc = "Recent Files",
                             key = "r",
