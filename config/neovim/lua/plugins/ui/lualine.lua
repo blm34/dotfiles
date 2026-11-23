@@ -227,10 +227,6 @@ return {
                         "diagnostics",
                         sources = { 'nvim_lsp' },
                     },
-                    {
-                        harpoon_statusline,
-                        cond = function() return vim.bo.buftype ~= "terminal" end
-                    },
                     "encoding",
                 },
                 lualine_y = {

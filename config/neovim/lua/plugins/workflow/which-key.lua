@@ -31,7 +31,6 @@ return {
             { "<leader>c",  group = "Code" },
             { "<leader>d",  group = "Debug" },
             { "<leader>g",  group = "Git" },
-            { "<leader>h",  group = "Harpoon" },
             { "<leader>q",  group = "QFL" },
             { "<leader>r",  group = "Code Runners" },
             { "<leader>s",  group = "Telescope" },
