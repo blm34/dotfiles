@@ -2,6 +2,9 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
+-- jk for escape from insert
+vim.keymap.set("i", "jk", "<ESC>", { desc = "Escape insert mode" })
+
 -- Move selected text up and down with J and K in visual mode
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move visual selection down" })
 vim.keymap.set("v", "K", ":m '>-2<CR>gv=gv", { desc = "Move visual selection up" })
