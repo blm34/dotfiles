@@ -3,18 +3,6 @@ return {
     dependencies = { "kevinhwang91/promise-async" },
     event = "VeryLazy",
     config = function()
-        vim.o.foldcolumn = '1'
-        vim.o.foldlevel = 99
-        vim.o.foldlevelstart = 99
-        vim.o.foldenable = true
-        vim.opt.fillchars = {
-            fold = ' ',
-            foldclose = '',
-            foldopen = '',
-            foldsep = ' ',
-            foldinner = ' ',
-        }
-
         vim.keymap.set("n", "zR", require("ufo").openAllFolds, { desc = "Open all folds" })
         vim.keymap.set("n", "zM", require("ufo").closeAllFolds, { desc = "Close all folds" })
         vim.keymap.set("n", "zK", function()

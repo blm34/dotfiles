@@ -22,6 +22,20 @@ vim.keymap.set("n", "<ESC>", "<cmd>nohlsearch<CR>",
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
+-- Folds
+vim.wo.foldcolumn = 'auto'
+vim.o.foldlevelstart = 99
+vim.wo.foldenable = true
+vim.opt.fillchars = {
+    fold = ' ',
+    foldclose = '',
+    foldopen = '',
+    foldsep = ' ',
+    foldinner = ' ',
+}
+
+vim.o.winborder = 'rounded'
+
 -- Show whitespace
 vim.opt.list = true
 vim.opt.listchars = { trail = '⋅' }
