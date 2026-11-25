@@ -4,29 +4,27 @@ vim.opt.number = true
 -- Highlight the line the cursor is on
 vim.opt.cursorline = true
 
--- How many spaces to use to visualise a tab character
-vim.opt.tabstop = 4
--- How many spaces to insert when pressing tab
-vim.opt.softtabstop = 4
--- How much indentation changes when using indent commands e.g. << and >>
-vim.opt.shiftwidth = 4
--- Use spaces instead of tab
-vim.opt.expandtab = true
--- Automatically adjust indentation for code-like structures
-vim.opt.smartindent = true
+-- Indentation options
+vim.opt.tabstop = 4        -- How many spaces to use to visualise a tab character
+vim.opt.softtabstop = 4    -- How many spaces to insert when pressing tab
+vim.opt.shiftwidth = 4     -- How much indentation changes when using indent commands e.g. << and >>
+vim.opt.expandtab = true   -- Use spaces instead of tab
+vim.opt.smartindent = true -- Automatically adjust indentation for code-like structures
 
 -- Disable line wrapping for lines longer than the window width
 vim.opt.wrap = false
 
--- Highlight search matches
+-- Search options
 vim.opt.hlsearch = true
--- Highlight matches as a search term is being entered
 vim.opt.incsearch = true
--- Turn off search match highlights with <ESC> in normal mode
-vim.keymap.set("n", "<ESC>", "<cmd>nohlsearch<CR>", { silent = true, noremap = true, desc = "Turn off search highlights" })
--- Case-insensitive searching unless \C or one or more capital letters in the search term
+vim.keymap.set("n", "<ESC>", "<cmd>nohlsearch<CR>",
+    { silent = true, noremap = true, desc = "Turn off search highlights" })
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
+
+-- Show whitespace
+vim.opt.list = true
+vim.opt.listchars = { trail = '⋅' }
 
 -- Enable 24-bit RGB colours in the terminal
 vim.opt.termguicolors = true
@@ -44,8 +42,9 @@ vim.opt.splitbelow = true
 -- Treat the @ symbol as valid in a filename
 vim.opt.isfname:append("@-@")
 
--- Control how long (ms) to wait before triggering certain events after inactivity
-vim.opt.updatetime = 250
+-- Update times/timeouts
+vim.opt.updatetime = 300
+vim.opt.timeoutlen = 1000
 
 -- Show a vertical guidline at column 80
 vim.opt.colorcolumn = "80"
@@ -65,3 +64,9 @@ vim.opt.undodir = { vim.fs.joinpath(vim.fn.stdpath("data"), "undo") }
 if vim.fn.isdirectory(vim.opt.undodir:get()[1]) == 0 then
     vim.fn.mkdir(vim.opt.undodir:get()[1], "p")
 end
+
+-- Ignore files matching patterns in wildcards
+vim.opt.wildignore:append {
+    '*.pyc',
+    '.git/**',
+}
