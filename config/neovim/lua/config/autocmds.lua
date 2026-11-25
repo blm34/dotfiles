@@ -35,3 +35,55 @@ vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter" }, {
     desc = 'Update buffer if changed externally',
     command = "checktime",
 })
+
+-- Restore cursor position when reopening files
+vim.api.nvim_create_autocmd("BufReadPost", {
+    group = vim.api.nvim_create_augroup('blm34/restore_cursor', { clear = true }),
+    desc = 'Restore cursor position when reopening a file',
+    callback = function()
+        local mark = vim.api.nvim_buf_get_mark(0, '"')
+        local line_count = vim.api.nvim_buf_line_count(0)
+
+        if mark[1] > 0 and mark[1] <= line_count then
+            vim.api.nvim_win_set_cursor(0, mark)
+        end
+    end
+})
+
+-- Highlight text after yanking
+vim.api.nvim_create_autocmd("TextYankPost", {
+    group = vim.api.nvim_create_augroup('blm34/highlight_yanked', { clear = true }),
+    desc = "Highlight yanked text",
+    callback = function()
+        vim.hl.on_yank({ timeout = 250 })
+    end,
+})
+
+-- Auto resize splits
+vim.api.nvim_create_autocmd("VimResized", {
+    group = vim.api.nvim_create_augroup('blm34/resize_splits', { clear = true }),
+    desc = "Automatically resize splits",
+    command = "wincmd =",
+})
+
+-- Close specific buffers with `q`
+vim.api.nvim_create_autocmd("FileType", {
+    group = vim.api.nvim_create_augroup('blm34/close_with_q', { clear = true }),
+    desc = "Make temporary buffers easier to close",
+    pattern = {
+        "help",
+        "qf",
+        "checkhealth",
+        "man",
+        "lspinfo",
+    },
+    callback = function(event)
+        vim.bo[event.buf].buflisted = false
+
+        vim.keymap.set("n", "q", "<cmd>close<cr>", {
+            buffer = event.buf,
+            silent = true,
+            desc = "Close temporary window",
+        })
+    end
+})
