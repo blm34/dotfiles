@@ -28,3 +28,10 @@ vim.api.nvim_create_autocmd({ 'BufLeave', 'FocusLost', 'InsertEnter', 'CmdlineEn
         end
     end,
 })
+
+-- Update buffers if changed and not modified
+vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter" }, {
+    group = vim.api.nvim_create_augroup('blm34/update_buffer', { clear = true }),
+    desc = 'Update buffer if changed externally',
+    command = "checktime",
+})

@@ -67,13 +67,6 @@ vim.opt.timeoutlen = 1000
 -- Show a vertical guidline at column 80
 vim.opt.colorcolumn = "80"
 
--- Update buffers if changed and not modified
-vim.opt.autoread = true
-vim.api.nvim_create_autocmd(
-    { "FocusGained", "BufEnter" },
-    { command = "checktime" }
-)
-
 -- Define directory for undo files
 vim.opt.undofile = true
 vim.opt.undodir = { vim.fs.joinpath(vim.fn.stdpath("data"), "undo") }
