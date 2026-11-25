@@ -1,7 +1,3 @@
--- Set leader and local leader
-vim.g.mapleader = " "
-vim.g.maplocalleader = "\\"
-
 -- jk for escape from insert
 vim.keymap.set("i", "jk", "<ESC>", { desc = "Escape insert mode" })
 

@@ -1,3 +1,7 @@
+-- Set leader and local leader
+vim.g.mapleader = " "
+vim.g.maplocalleader = "\\"
+
 -- Turn on line numbers
 vim.opt.number = true
 
