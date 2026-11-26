@@ -33,9 +33,9 @@ return {
             { "<leader>g",  group = "Git" },
             { "<leader>q",  group = "QFL" },
             { "<leader>r",  group = "Code Runners" },
-            { "<leader>s",  group = "Telescope" },
-            { "<leader>sl", group = "Telescope LSP" },
-            { "<leader>sg", group = "Telescope Git" },
+            { "<leader>f",  group = "Telescope" },
+            { "<leader>fl", group = "Telescope LSP" },
+            { "<leader>fg", group = "Telescope Git" },
             { "<leader>t",  group = "Test" },
             { "<leader>w",  group = "Workspace (tab)" },
 

@@ -22,7 +22,7 @@ return {
             desc = "Todo quickfix list"
         },
         {
-            "<leader>st",
+            "<leader>ft",
             function() vim.cmd("TodoTelescope") end,
             desc = "Todo telescope"
         },
