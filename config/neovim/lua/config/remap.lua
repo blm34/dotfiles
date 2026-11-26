@@ -40,8 +40,8 @@ vim.keymap.set("t", "<C-j>", "<C-\\><C-n><C-w>k", { desc = "Move to window below
 vim.keymap.set("t", "<C-k>", "<C-\\><C-n><C-w>l", { desc = "Move to window above" })
 
 -- Save changes
-vim.keymap.set("n", "<C-s>", ":w<cr>", { desc = "Save current buffer" })
-vim.keymap.set("n", "<C-S-s>", ":wa<cr>", { desc = "Save all buffers" })
+vim.keymap.set("n", "<leader>s", ":w<cr>", { desc = "Save current buffer" })
+vim.keymap.set("n", "<leader>S", ":wa<cr>", { desc = "Save all buffers" })
 
 -- Jump in line in insert mode
 vim.keymap.set("i", "<C-h>", "<C-o>^", { desc = "Jump to start of line" })
