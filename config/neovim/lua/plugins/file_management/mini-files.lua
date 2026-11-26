@@ -42,12 +42,7 @@ return {
     },
     keys = {
         {
-            "<leader>fo",
-            function() if not require("mini.files").close() then require("mini.files").open() end end,
-            desc = "Open mini.files",
-        },
-        {
-            "<leader>ff",
+            "<leader>o",
             function()
                 if not require("mini.files").close() then
                     require("mini.files").open(vim.api.nvim_buf_get_name(0),
@@ -55,11 +50,6 @@ return {
                 end
             end,
             desc = "Open mini.files at current file",
-        },
-        {
-            "<leader>fd",
-            function() if not require("mini.files").close() then require("mini.files").open(nil, false) end end,
-            desc = "Open mini.files at cwd",
         },
 
     },

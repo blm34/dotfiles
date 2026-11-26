@@ -38,7 +38,6 @@ return {
             { "<leader>sg", group = "Telescope Git" },
             { "<leader>t",  group = "Test" },
             { "<leader>w",  group = "Workspace (tab)" },
-            { "<leader>f",  group = "File Explorer" },
 
             -- LSP builtins
             { "gd",         desc = "Go to definition" },
