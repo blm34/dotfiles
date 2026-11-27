@@ -16,18 +16,18 @@ end
 
 -- Shortened version of modes
 local mode_short = {
-    ["NORMAL"]    = "Norm",
-    ["INSERT"]    = "Ins",
-    ["VISUAL"]    = "Vis",
-    ["V-LINE"]    = "V-Line",
-    ["V-BLOCK"]   = "V-Block",
-    ["V-REPLACE"] = "V-Replace",
+    ["NORMAL"]    = "NORM",
+    ["INSERT"]    = "INS",
+    ["VISUAL"]    = "VIS",
+    ["V-LINE"]    = "VIS-L",
+    ["V-BLOCK"]   = "VIS-B",
+    ["V-REPLACE"] = "VIS-R",
     ["REPLACE"]   = "R",
-    ["COMMAND"]   = "Cmd",
-    ["TERMINAL"]  = "Term",
+    ["COMMAND"]   = "CMD",
+    ["TERMINAL"]  = "TERM",
     ["SELECT"]    = "S",
-    ["S-LINE"]    = "S-Line",
-    ["S-BLOCK"]   = "S-Block",
+    ["S-LINE"]    = "S-LINE",
+    ["S-BLOCK"]   = "S-BLOCK",
     ["O-PENDING"] = "O",
 }
 
