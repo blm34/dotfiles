@@ -39,6 +39,10 @@ vim.keymap.set("t", "<C-l>", "<C-\\><C-n><C-w>j", { desc = "Move to window to ri
 vim.keymap.set("t", "<C-j>", "<C-\\><C-n><C-w>k", { desc = "Move to window below" })
 vim.keymap.set("t", "<C-k>", "<C-\\><C-n><C-w>l", { desc = "Move to window above" })
 
+-- Window commands
+vim.keymap.set("n", "<leader>wq", ":q<cr>", { desc = "Close window" })
+vim.keymap.set("n", "<leader>wqa", ":qa<cr>", { desc = "Close all windows" })
+
 -- Save changes
 vim.keymap.set("n", "<leader>s", ":w<cr>", { desc = "Save current buffer" })
 vim.keymap.set("n", "<leader>S", ":wa<cr>", { desc = "Save all buffers" })
